@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harness & Plataforma de Agentes — Curso IA Venda Nova do Imigrante (ES)</title>
+  <title>Plataforma & Harness de Agentes — Curso IA Venda Nova do Imigrante (ES)</title>
   <style>
     :root {
       --primary: #143d2b;
-      --primary-dark: #0c261b;
+      --primary-dark: #0b2419;
       --primary-light: #236346;
       --accent: #d4822a;
       --accent-bg: #fef6ec;
-      --bg: #f1f5f3;
+      --bg: #f0f5f2;
       --card: #ffffff;
-      --text: #18241e;
-      --muted: #56665e;
-      --border: #cfddd5;
-      --code-bg: #121e18;
-      --code-text: #e2f1e8;
+      --text: #16241d;
+      --muted: #54665d;
+      --border: #cddcd4;
+      --code-bg: #101c16;
+      --code-text: #e2f2e9;
       --success: #1b7a34;
       --success-bg: #e3f5e8;
+      --danger: #c0392b;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -27,54 +28,60 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.55;
-      padding-bottom: 60px;
+      padding-bottom: 70px;
     }
     header {
       background: linear-gradient(135deg, var(--primary-dark), var(--primary));
       color: #fff;
-      padding: 22px 20px;
+      padding: 20px 20px 16px;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.16);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.18);
     }
     .header-inner {
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
     .brand h1 {
-      font-size: 1.35rem;
+      font-size: 1.32rem;
       font-weight: 800;
       letter-spacing: -0.3px;
     }
     .brand span {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       opacity: 0.88;
       display: block;
       margin-top: 2px;
     }
+    .header-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
     .progress-widget {
       background: rgba(255,255,255,0.12);
-      padding: 10px 16px;
+      padding: 8px 14px;
       border-radius: 10px;
-      min-width: 290px;
+      min-width: 250px;
       border: 1px solid rgba(255,255,255,0.22);
     }
     .progress-label {
       display: flex;
       justify-content: space-between;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
     .progress-bar-bg {
-      height: 10px;
-      background: rgba(0,0,0,0.3);
+      height: 8px;
+      background: rgba(0,0,0,0.32);
       border-radius: 999px;
       overflow: hidden;
     }
@@ -84,9 +91,49 @@
       background: #4ade80;
       transition: width 0.35s ease;
     }
+    /* Quick Presets & Transfer Bar */
+    .top-utility-bar {
+      max-width: 1200px;
+      margin: 14px auto 0;
+      padding: 0 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .preset-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .preset-btn {
+      background: #eef5f1;
+      border: 1px solid #c2d6ca;
+      color: var(--primary-dark);
+      padding: 6px 10px;
+      border-radius: 7px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .preset-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    /* Navigation Tabs */
     .nav-tabs {
-      max-width: 1180px;
-      margin: 18px auto 0;
+      max-width: 1200px;
+      margin: 14px auto 0;
       padding: 0 16px;
       display: flex;
       gap: 8px;
@@ -116,8 +163,8 @@
       box-shadow: 0 4px 12px rgba(20, 61, 43, 0.24);
     }
     .main-container {
-      max-width: 1180px;
-      margin: 16px auto 0;
+      max-width: 1200px;
+      margin: 14px auto 0;
       padding: 0 16px;
     }
     .tab-panel { display: none; }
@@ -126,12 +173,13 @@
       from { opacity: 0; transform: translateY(4px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    /* Interactive Harness Visual Pipeline */
     .architecture-banner {
       background: linear-gradient(135deg, #fff9f0, #f9ecda);
       border: 2px solid #e0ba85;
       border-radius: 12px;
       padding: 16px 20px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -140,7 +188,7 @@
     }
     .architecture-banner h3 {
       color: #78470d;
-      font-size: 1rem;
+      font-size: 0.98rem;
     }
     .arch-flow {
       display: flex;
@@ -151,17 +199,21 @@
     .arch-pill {
       font-size: 0.78rem;
       font-weight: 700;
-      padding: 6px 11px;
+      padding: 7px 12px;
       border-radius: 8px;
       background: #fff;
       border: 1px solid #d5b280;
       color: #693d0a;
+      cursor: pointer;
+      transition: transform 0.15s;
     }
+    .arch-pill:hover { transform: translateY(-2px); }
     .arch-pill.ok {
       background: var(--success-bg);
       border-color: var(--success);
       color: var(--success);
     }
+    /* Cards */
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -180,12 +232,12 @@
       padding-bottom: 12px;
     }
     .card-title {
-      font-size: 1.16rem;
+      font-size: 1.15rem;
       font-weight: 800;
       color: var(--primary-dark);
     }
     .card-subtitle {
-      font-size: 0.9rem;
+      font-size: 0.89rem;
       color: var(--muted);
       margin-top: 3px;
     }
@@ -201,15 +253,16 @@
     }
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    @media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    @media (max-width: 820px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
     label {
       display: block;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 700;
       margin-bottom: 5px;
       color: var(--primary-dark);
     }
-    input[type="text"], select, textarea {
+    input[type="text"], input[type="number"], select, textarea {
       width: 100%;
       padding: 10px 12px;
       border: 1px solid var(--border);
@@ -230,12 +283,14 @@
       color: var(--code-text);
       border-radius: 10px;
       padding: 16px;
-      margin: 12px 0;
+      margin: 10px 0;
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       white-space: pre-wrap;
       line-height: 1.5;
       border-left: 5px solid var(--accent);
+      max-height: 360px;
+      overflow-y: auto;
     }
     .action-bar {
       display: flex;
@@ -246,10 +301,10 @@
     }
     .btn {
       border: none;
-      padding: 10px 16px;
+      padding: 9px 15px;
       border-radius: 8px;
       font-weight: 700;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -263,6 +318,7 @@
     .btn-accent:hover { background: #b86c1f; }
     .btn-outline { background: #fff; color: var(--primary); border: 1px solid var(--primary); }
     .btn-outline:hover { background: #edf5f0; }
+    .btn-sm { padding: 6px 11px; font-size: 0.78rem; }
     .step-check {
       margin-left: auto;
       display: inline-flex;
@@ -272,7 +328,7 @@
       padding: 8px 14px;
       border-radius: 8px;
       font-weight: 700;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       cursor: pointer;
       user-select: none;
       border: 1px solid #c5d8cc;
@@ -285,9 +341,50 @@
       border-radius: 10px;
       padding: 14px;
     }
-    .hub-folder h4 { color: var(--primary); font-size: 0.94rem; margin-bottom: 6px; }
-    .hub-folder ul { list-style: none; font-size: 0.84rem; color: var(--muted); }
+    .hub-folder h4 { color: var(--primary); font-size: 0.92rem; margin-bottom: 6px; }
+    .hub-folder ul { list-style: none; font-size: 0.83rem; color: var(--muted); }
     .hub-folder li { margin-bottom: 4px; }
+    /* Skill Check Cards */
+    .skill-card {
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fbfdfc;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .skill-card.active {
+      border-color: var(--primary);
+      background: #eef7f2;
+    }
+    .skill-card strong {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+    .skill-card span {
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: block;
+    }
+    /* Live Prototype Sandbox (Tab 4) */
+    .proto-box {
+      background: #f8fbf9;
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 10px;
+    }
+    .proto-kpi {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+    .proto-kpi span { font-size: 0.78rem; color: var(--muted); display: block; }
+    .proto-kpi strong { font-size: 1.25rem; color: var(--primary-dark); }
     .timer-box {
       background: var(--primary-dark);
       color: #fff;
@@ -318,8 +415,8 @@
       background: #eef6f1;
       transform: translateY(-2px);
     }
-    .link-card strong { display: block; color: var(--primary); font-size: 0.95rem; margin-bottom: 4px; }
-    .link-card span { font-size: 0.82rem; color: var(--muted); }
+    .link-card strong { display: block; color: var(--primary); font-size: 0.94rem; margin-bottom: 4px; }
+    .link-card span { font-size: 0.81rem; color: var(--muted); }
     #toast {
       position: fixed;
       bottom: 24px;
@@ -342,42 +439,62 @@
   <div class="header-inner">
     <div class="brand">
       <h1>⚙️ Arquitetura de Agentes, Skills, Harness & Sistemas — Venda Nova (ES)</h1>
-      <span>Plataforma Interativa de Implementação • Do Diagnóstico e Tratamento de Dados à Força de Trabalho Digital</span>
+      <span>Do Diagnóstico e Tratamento de Dados à Força de Trabalho Digital e Sistemas Internos</span>
     </div>
-    <div class="progress-widget">
-      <div class="progress-label">
-        <span>Implantação da Arquitetura</span>
-        <span id="progressText">0% (0/8 marcos)</span>
-      </div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fill" id="progressBar"></div>
+    <div class="header-controls">
+      <button class="btn btn-accent btn-sm" onclick="baixarPacoteHub()">📥 Baixar Arquivos do Meu Hub (.md)</button>
+      <button class="btn btn-outline btn-sm" style="background:rgba(255,255,255,0.14); color:#fff; border-color:rgba(255,255,255,0.35);" onclick="exportarProjetoJSON()">📤 Salvar/Transferir Projeto</button>
+      <button class="btn btn-outline btn-sm" style="background:rgba(255,255,255,0.14); color:#fff; border-color:rgba(255,255,255,0.35);" onclick="enviarWhatsAppInstrutor()">📲 Enviar p/ Instrutor</button>
+      <div class="progress-widget">
+        <div class="progress-label">
+          <span>Implantação do Harness</span>
+          <span id="progressText">0% (0/8 marcos)</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
       </div>
     </div>
   </div>
 </header>
 
+<!-- BARRA DE EXEMPLOS DE VENDA NOVA EM 1 CLIQUE (DESTRAVA INICIANTES) -->
+<div class="top-utility-bar">
+  <div class="preset-group">
+    <span>⚡ Preencher com Caso Real de Venda Nova (1 Clique):</span>
+    <button class="preset-btn" onclick="carregarPreset('cafe')">☕ Cafés & Agroturismo</button>
+    <button class="preset-btn" onclick="carregarPreset('pousada')">🏨 Pousada & Restaurante</button>
+    <button class="preset-btn" onclick="carregarPreset('comercio')">🛒 Comércio & Distribuição</button>
+    <button class="preset-btn" onclick="carregarPreset('rochas')">🪨 Indústria/Rochas & Serviços</button>
+  </div>
+  <div>
+    <input type="file" id="fileImportJSON" style="display:none" accept=".json" onchange="importarProjetoJSON(event)">
+    <button class="preset-btn" onclick="document.getElementById('fileImportJSON').click()">📂 Abrir Arquivo de Projeto (.json)</button>
+  </div>
+</div>
+
 <nav class="nav-tabs">
-  <button class="tab-btn active" onclick="openTab('tab-mod1', this)">🔍 Mód. 1: Diagnóstico, Dados & Hub Central</button>
-  <button class="tab-btn" onclick="openTab('tab-mod2', this)">🧠 Mód. 2: Agente Master & Especialistas</button>
-  <button class="tab-btn" onclick="openTab('tab-mod3', this)">🛠️ Mód. 3: Criador de Skills & Harness</button>
-  <button class="tab-btn" onclick="openTab('tab-mod4', this)">💻 Mód. 4: Fábrica de Sistemas & Plataformas</button>
-  <button class="tab-btn" onclick="openTab('tab-socios', this)">🧭 Central dos Sócios & Drive</button>
+  <button class="tab-btn active" id="btn-tab-mod1" onclick="openTab('tab-mod1', this)">🔍 Mód. 1: Diagnóstico, Dados & Hub Central</button>
+  <button class="tab-btn" id="btn-tab-mod2" onclick="openTab('tab-mod2', this)">🧠 Mód. 2: Agente Master & Especialistas</button>
+  <button class="tab-btn" id="btn-tab-mod3" onclick="openTab('tab-mod3', this)">🛠️ Mód. 3: Biblioteca de Skills & Harness</button>
+  <button class="tab-btn" id="btn-tab-mod4" onclick="openTab('tab-mod4', this)">💻 Mód. 4: Fábrica de Sistemas (Ao Vivo)</button>
+  <button class="tab-btn" id="btn-tab-socios" onclick="openTab('tab-socios', this)">🧭 Central dos Sócios & Drive</button>
 </nav>
 
 <main class="main-container">
 
-  <!-- BARRA VISUAL DA ARQUITETURA (HARNESS) -->
+  <!-- MAPA INTERATIVO DO HARNESS (CLICÁVEL) -->
   <div class="architecture-banner">
     <div>
-      <h3>🔗 Pipeline do Harness Empresarial (Certificação Empresa Inovadora em IA)</h3>
-      <p style="font-size: 0.83rem; color: #693d0a;">Em vez de prompts soltos, construímos uma engrenagem conectada para resolver o problema real da sua empresa:</p>
+      <h3>🔗 Engrenagem do Harness Empresarial (Clique nas etapas para navegar)</h3>
+      <p style="font-size: 0.82rem; color: #693d0a;">Cada módulo constrói uma peça física da arquitetura de IA da sua empresa até gerar seu sistema próprio:</p>
     </div>
     <div class="arch-flow">
-      <span class="arch-pill" id="pill1">1. Diagnóstico & Dados Limpos</span> ➔
-      <span class="arch-pill" id="pill2">2. Hub Central</span> ➔
-      <span class="arch-pill" id="pill3">3. Master + Sub-agentes</span> ➔
-      <span class="arch-pill" id="pill4">4. Skills & Harness</span> ➔
-      <span class="arch-pill" id="pill5">5. Sistema Operacional</span>
+      <span class="arch-pill" id="pill1" onclick="openTab('tab-mod1', document.getElementById('btn-tab-mod1'))">1. Diagnóstico & Limpeza de Dados</span> ➔
+      <span class="arch-pill" id="pill2" onclick="openTab('tab-mod1', document.getElementById('btn-tab-mod1'))">2. Hub Central</span> ➔
+      <span class="arch-pill" id="pill3" onclick="openTab('tab-mod2', document.getElementById('btn-tab-mod2'))">3. Master + Sub-agentes</span> ➔
+      <span class="arch-pill" id="pill4" onclick="openTab('tab-mod3', document.getElementById('btn-tab-mod3'))">4. Skills & Harness</span> ➔
+      <span class="arch-pill" id="pill5" onclick="openTab('tab-mod4', document.getElementById('btn-tab-mod4'))">5. Sistema Operacional</span>
     </div>
   </div>
 
@@ -388,8 +505,8 @@
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">Etapa 1.1 — Diagnóstico da Empresa e Mapeamento do Problema Real</div>
-          <div class="card-subtitle">Qual problema concreto da sua operação, gestão ou vendas nós vamos atacar e sistematizar durante os 4 encontros?</div>
+          <div class="card-title">Etapa 1.1 — Diagnóstico da Empresa e Mapeamento do Gargalo Real</div>
+          <div class="card-subtitle">Apresente o problema operacional, financeiro ou comercial que vamos resolver com dados tratados, agentes e sistemas. (Dica: clique em um dos 4 setores no topo para ver um exemplo preenchido!).</div>
         </div>
         <span class="badge">Módulo 1 • Horas 1 e 2</span>
       </div>
@@ -400,7 +517,7 @@
           <input type="text" id="empNome" placeholder="Ex.: Torrefação & Agroturismo Família Zandonadi" oninput="atualizarArquitetura()">
         </div>
         <div>
-          <label for="empSetor">2. Setor de Atuação</label>
+          <label for="empSetor">2. Setor de Atuação (Ilha Setorial)</label>
           <select id="empSetor" onchange="atualizarArquitetura()">
             <option value="Agroturismo, Cafés Especiais e Agroindústria">Agroturismo, Cafés Especiais e Agroindústria (Socol, Queijos)</option>
             <option value="Hotelaria, Pousadas e Gastronomia">Hotelaria, Pousadas e Gastronomia</option>
@@ -413,73 +530,82 @@
       <div class="grid-2">
         <div>
           <label for="empProblema">3. O Problema / Gargalo Nº 1 que Você Trouxe para Resolver</label>
-          <textarea id="empProblema" placeholder="Ex.: Demoramos horas para calcular custos de lotes/orçamentos, perdemos o histórico dos pedidos de clientes e cada funcionário faz de um jeito diferente." oninput="atualizarArquitetura()"></textarea>
+          <textarea id="empProblema" placeholder="Ex.: Demoramos horas para calcular custos reais de produção/orçamento, perdemos o controle dos pedidos e cada funcionário executa o processo de um jeito diferente." oninput="atualizarArquitetura()"></textarea>
         </div>
         <div>
-          <label for="empDadosBrutos">4. Quais Dados Brutos Você Tem Hoje (Mesmo Bagunçados)?</label>
-          <textarea id="empDadosBrutos" placeholder="Ex.: Planilhas de vendas e custos no Excel, notas fiscais em PDF, tabela de preços antiga e regras que só estão na minha cabeça." oninput="atualizarArquitetura()"></textarea>
+          <label for="empDadosBrutos">4. Fontes de Dados Brutos da Empresa (Mesmo Desorganizadas)</label>
+          <textarea id="empDadosBrutos" placeholder="Ex.: Planilhas de custos e vendas no Excel, romaneios/notas em PDF, mensagens de pedidos no WhatsApp e regras de negócio que estão só na cabeça do dono." oninput="atualizarArquitetura()"></textarea>
         </div>
       </div>
 
       <div class="grid-2">
         <div>
-          <label for="empRegras">5. Regras Inegociáveis do Seu Negócio (Margem, Qualidade, Prazo)</label>
-          <input type="text" id="empRegras" placeholder="Ex.: Margem mínima de 30%, nunca prometer prazo menor que 48h, manter padrão artesanal" oninput="atualizarArquitetura()">
+          <label for="empRegras">5. Regras Inegociáveis do Negócio (Guardrails para os Agentes)</label>
+          <input type="text" id="empRegras" placeholder="Ex.: Margem líquida mínima de 28%, nunca prometer prazo inferior a 48h, desconto máximo de 5% à vista" oninput="atualizarArquitetura()">
         </div>
         <div>
-          <label for="empMetaSistema">6. Qual Sistema / Solução Queremos Ter Rodando no Final?</label>
-          <input type="text" id="empMetaSistema" placeholder="Ex.: Um sistema interno de cálculo de custos/orçamentos + painel de controle da operação" oninput="atualizarArquitetura()">
+          <label for="empMetaSistema">6. Qual Sistema / Plataforma Interna Queremos Ter Rodando no Módulo 4?</label>
+          <input type="text" id="empMetaSistema" placeholder="Ex.: Sistema Calculador de Custo de Lote/Orçamento + Painel de Controle de Pedidos e Margem" oninput="atualizarArquitetura()">
         </div>
       </div>
 
       <div class="action-bar">
+        <button class="btn btn-outline" onclick="baixarArquivoUnico('00_DIAGNOSTICO_E_REGRAS.md', document.getElementById('specMod1Dados').textContent)">💾 Baixar 00_DIAGNOSTICO_E_REGRAS.md</button>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="1" onchange="salvarProgresso()">
-          Diagnóstico e Problema Mapeados
+          1. Diagnóstico Mapeado
         </label>
       </div>
     </div>
 
-    <!-- Etapa 1.2: Tratamento e Limpeza de Dados + Hub Central -->
+    <!-- MELHORIA 2: BANCADA PRÁTICA DE LIMPEZA E TRATAMENTO DE DADOS BRUTOS -->
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">Etapa 1.2 — Pipeline de Tratamento de Dados e Estrutura do "Hub Central"</div>
-          <div class="card-subtitle">Agentes não funcionam com dados bagunçados. Use a especificação abaixo para estruturar seu Hub Central (onde todas as informações da empresa e dos agentes ficam reunidas) e higienizar seus dados brutos:</div>
+          <div class="card-title">Etapa 1.2 — Bancada Prática de Tratamento de Dados e Criação do Hub Central</div>
+          <div class="card-subtitle">Cole abaixo uma amostra dos seus dados bagunçados (anotações, linhas de planilha, mensagens de pedidos ou transcrição de áudio) para o Agente de Dados limpar e padronizar para o seu Hub Central:</div>
         </div>
         <span class="badge">Módulo 1 • Horas 3 e 4</span>
       </div>
 
-      <div class="grid-2" style="margin-bottom: 14px;">
-        <div class="hub-folder">
-          <h4>📁 Estrutura do Seu Hub Central (Google Drive / NotebookLM / Notion)</h4>
-          <ul>
-            <li>├── <strong>00_DIAGNOSTICO_E_REGRAS.md</strong> (O Cérebro e limites da empresa)</li>
-            <li>├── <strong>01_DADOS_TRATADOS/</strong> (Tabelas limpas em CSV/Sheets e Catálogo)</li>
-            <li>├── <strong>02_FORCA_DE_TRABALHO/</strong> (Agente Master + Agentes Especialistas)</li>
-            <li>├── <strong>03_SKILLS_E_HARNESS/</strong> (Pacotes `SKILL.md` de execução)</li>
-            <li>└── <strong>04_ENTREGAS_E_SISTEMAS/</strong> (Relatórios dos agentes e Sistema Web)</li>
-          </ul>
+      <div class="grid-2" style="margin-bottom: 12px;">
+        <div>
+          <label for="inputDadosSujos">Cole Aqui Seus Dados Brutos / Bagunçados (Teste Agora):</label>
+          <textarea id="inputDadosSujos" style="min-height: 115px;" placeholder="Ex.: Cafe torrado 250g custo 14,50 venda 28,00 / Kit Degustacao Socol + Queijo custo 42 venda 85 / Cesta Colonial Grande sem preço atualizado..." oninput="atualizarArquitetura()"></textarea>
+          <label for="formatoDadosLimpos">Formato de Saída Desejado para o Hub Central:</label>
+          <select id="formatoDadosLimpos" onchange="atualizarArquitetura()">
+            <option value="Tabela Markdown + CSV Padronizado (para Planilha e Agentes)">Tabela Markdown + CSV Padronizado (para Planilha e Agentes)</option>
+            <option value="Base de Conhecimento Estruturada em Tópicos (para NotebookLM / GPTs)">Base de Conhecimento Estruturada em Tópicos (para NotebookLM / GPTs)</option>
+            <option value="Estrutura JSON / Banco de Dados (para alimentar Sistema Web)">Estrutura JSON / Banco de Dados (para alimentar Sistema Web)</option>
+          </select>
         </div>
+
         <div class="hub-folder">
-          <h4>🧹 O Que Fazemos no Tratamento de Dados</h4>
+          <h4>📁 O Lugar Único: Estrutura do Seu "Hub Central" no Drive</h4>
+          <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 8px;">Onde todas as informações da empresa e as entregas dos agentes ficam reunidas:</p>
           <ul>
-            <li>✓ Padronização de colunas de planilhas (Datas, Valores, Categorias, Clientes);</li>
-            <li>✓ Extração de dados de PDFs, notas e áudios para tabelas estruturadas;</li>
-            <li>✓ Remoção de duplicidades e criação de códigos únicos (IDs de produtos/clientes);</li>
-            <li>✓ Documentação das regras que antes estavam só na cabeça do fundador.</li>
+            <li>📂 <strong>01_Diagnostico_e_Contexto/</strong> (`00_DIAGNOSTICO_E_REGRAS.md`)</li>
+            <li>📂 <strong>02_Bases_de_Dados_Tratadas/</strong> (Tabelas limpas de Custos, Clientes, Produtos)</li>
+            <li>📂 <strong>03_Forca_de_Trabalho_Agentes/</strong> (Agente Master + 3 Especialistas)</li>
+            <li>📂 <strong>04_Catalogo_de_Skills_e_Harness/</strong> (Arquivos `SKILL.md` de execução)</li>
+            <li>📂 <strong>05_Entregas_e_Sistemas/</strong> (Relatórios gerados e Sistema `.html` da empresa)</li>
           </ul>
+          <div style="margin-top: 10px;">
+            <a class="btn btn-outline btn-sm" href="https://drive.google.com/drive/folders/1i1dsn8D0IiyAjG-C9JD12TX4WS3nTaEd" target="_blank">📁 Abrir Pasta-Modelo do Hub no Drive</a>
+          </div>
         </div>
       </div>
 
-      <label>Especificação Técnica de Tratamento de Dados e Inicialização do Hub Central:</label>
+      <label>Pipeline Gerado para Higienização de Dados e Inicialização do Hub Central:</label>
       <div class="spec-box" id="specMod1Dados"></div>
 
       <div class="action-bar">
-        <button class="btn btn-primary" onclick="copiarTexto('specMod1Dados')">📋 Copiar Especificação de Tratamento de Dados & Hub</button>
+        <button class="btn btn-primary" onclick="copiarTexto('specMod1Dados')">📋 Copiar Comando de Limpeza de Dados</button>
+        <a class="btn btn-outline" href="https://chatgpt.com" target="_blank">🚀 Executar no ChatGPT</a>
+        <a class="btn btn-outline" href="https://gemini.google.com" target="_blank">✨ Executar no Gemini</a>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="2" onchange="salvarProgresso()">
-          Dados Tratados e Hub Central Criado
+          2. Dados Tratados e Hub Criado
         </label>
       </div>
     </div>
@@ -493,19 +619,20 @@
       <div class="card-header">
         <div>
           <div class="card-title">Etapa 2.1 — O Agente Master (Orquestrador / Diretor Geral da Empresa)</div>
-          <div class="card-subtitle">O Agente Master não executa tarefas operacionais no improviso: ele lê o Hub Central, recebe o seu problema, decompõe o plano de ação e delega para os Agentes Especializados.</div>
+          <div class="card-subtitle">O Agente Master é o cérebro central conectado ao seu Hub: ele recebe o problema, consulta o diagnóstico da empresa, divide a solução em etapas e coordena os Agentes Especializados.</div>
         </div>
         <span class="badge">Módulo 2 • Horas 1 e 2</span>
       </div>
 
-      <label>Arquitetura do Sistema do Agente Master (`MASTER_ORCHESTRATOR.md`):</label>
+      <label>Especificação Operacional do Agente Master (`01_MASTER_ORCHESTRATOR.md`):</label>
       <div class="spec-box" id="specMod2Master"></div>
 
       <div class="action-bar">
-        <button class="btn btn-primary" onclick="copiarTexto('specMod2Master')">📋 Copiar Arquitetura do Agente Master</button>
+        <button class="btn btn-primary" onclick="copiarTexto('specMod2Master')">📋 Copiar Cérebro do Agente Master</button>
+        <button class="btn btn-outline" onclick="baixarArquivoUnico('01_MASTER_ORCHESTRATOR.md', document.getElementById('specMod2Master').textContent)">💾 Baixar Arquivo .md do Master</button>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="3" onchange="salvarProgresso()">
-          Agente Master Configurado
+          3. Agente Master Configurado
         </label>
       </div>
     </div>
@@ -514,75 +641,98 @@
       <div class="card-header">
         <div>
           <div class="card-title">Etapa 2.2 — Os 3 Agentes Especializados (Sua Força de Trabalho Digital)</div>
-          <div class="card-subtitle">Configure os sub-agentes especializados que trabalham sob o comando do Agente Master e salvam seus resultados no Hub Central da empresa:</div>
+          <div class="card-subtitle">Defina abaixo os 3 especialistas que respondem ao Agente Master, operam sobre os dados tratados do Hub Central e devolvem entregas auditadas:</div>
         </div>
         <span class="badge">Módulo 2 • Horas 3 e 4</span>
       </div>
 
       <div class="grid-3">
         <div>
-          <label for="subAgente1">Especialista #1 (Dados & Finanças)</label>
+          <label for="subAgente1">Especialista #1 (Dados, Custos & Finanças)</label>
           <input type="text" id="subAgente1" value="Agente de Engenharia de Dados, Custos e Margem" oninput="atualizarArquitetura()">
         </div>
         <div>
-          <label for="subAgente2">Especialista #2 (Operações & Processos)</label>
-          <input type="text" id="subAgente2" value="Agente de Controle Operacional, Qualidade e Fluxos" oninput="atualizarArquitetura()">
+          <label for="subAgente2">Especialista #2 (Operações, Processos & Qualidade)</label>
+          <input type="text" id="subAgente2" value="Agente Auditor de Operações, Fluxos e Padronização" oninput="atualizarArquitetura()">
         </div>
         <div>
-          <label for="subAgente3">Especialista #3 (Sistemas & Comercial)</label>
-          <input type="text" id="subAgente3" value="Agente Construtor de Sistemas, Ferramentas e Vendas" oninput="atualizarArquitetura()">
+          <label for="subAgente3">Especialista #3 (Sistemas, Ferramentas & Vendas)</label>
+          <input type="text" id="subAgente3" value="Agente Arquiteto de Sistemas Internos e Propostas" oninput="atualizarArquitetura()">
         </div>
       </div>
 
-      <label>Especificação Completa dos 3 Agentes Especializados (`SPECIALIST_AGENTS.md`):</label>
+      <label>Especificação da Equipe de Especialistas (`02_SPECIALIST_AGENTS.md`):</label>
       <div class="spec-box" id="specMod2Especialistas"></div>
 
       <div class="action-bar">
-        <button class="btn btn-primary" onclick="copiarTexto('specMod2Especialistas')">📋 Copiar Especificação dos 3 Especialistas</button>
+        <button class="btn btn-primary" onclick="copiarTexto('specMod2Especialistas')">📋 Copiar Equipe de Especialistas</button>
+        <button class="btn btn-outline" onclick="baixarArquivoUnico('02_SPECIALIST_AGENTS.md', document.getElementById('specMod2Especialistas').textContent)">💾 Baixar Arquivo .md dos Especialistas</button>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="4" onchange="salvarProgresso()">
-          Força de Trabalho Especializada Pronta
+          4. Força de Trabalho Pronta
         </label>
       </div>
     </div>
   </section>
 
   <!-- ===================================================================== -->
-  <!-- MÓDULO 3: CRIADOR DE SKILLS & HARNESS (ESTRUTURA DE CONTROLE)         -->
+  <!-- MÓDULO 3: BIBLIOTECA DE SKILLS & HARNESS (ESTRUTURA DE CONTROLE)      -->
   <!-- ===================================================================== -->
   <section class="tab-panel" id="tab-mod3">
+    <!-- MELHORIA 3: BIBLIOTECA MÚLTIPLA DE SKILLS -->
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">Etapa 3.1 — Construtor de Skills (`SKILL.md` — Habilidades Reutilizáveis)</div>
-          <div class="card-subtitle">Uma Skill transforma conhecimento técnico em um procedimento determinístico que o Agente Especializado executa sem alucinar:</div>
+          <div class="card-title">Etapa 3.1 — Biblioteca e Construtor de Skills (`SKILL.md` — Habilidades dos Agentes)</div>
+          <div class="card-subtitle">Clique nas Skills abaixo para ativar ou desativar no pacote da sua empresa e customize sua Skill principal. Cada Skill garante que o agente siga um procedimento exato sem inventar dados:</div>
         </div>
         <span class="badge">Módulo 3 • Horas 1 e 2</span>
       </div>
 
-      <div class="grid-3">
-        <div>
-          <label for="skillNome">Nome da Skill (Habilidade)</label>
-          <input type="text" id="skillNome" value="auditoria-e-calculo-operacional" oninput="atualizarArquitetura()">
+      <label>Selecione as Skills que farão parte do Catálogo da Sua Empresa (Clique para marcar/desmarcar):</label>
+      <div class="grid-4" style="margin-bottom: 16px;">
+        <div class="skill-card active" id="skCard1" onclick="toggleSkillCard(1)">
+          <strong>🧹 Skill 1: Higienização de Dados</strong>
+          <span>Limpa planilhas, padroniza colunas, remove duplicados e valida tabelas para o Hub.</span>
         </div>
-        <div>
-          <label for="skillInput">Dados de Entrada (Do Hub Central)</label>
-          <input type="text" id="skillInput" value="Planilha de custos, pedidos do período e regras de margem" oninput="atualizarArquitetura()">
+        <div class="skill-card active" id="skCard2" onclick="toggleSkillCard(2)">
+          <strong>💰 Skill 2: Auditoria de Custo & Margem</strong>
+          <span>Calcula custo real por lote/serviço, aplica guardrails de margem e simula preços.</span>
         </div>
-        <div>
-          <label for="skillOutput">Saída Padronizada no Hub</label>
-          <input type="text" id="skillOutput" value="Tabela auditada + Alerta de desvios + Plano de correção" oninput="atualizarArquitetura()">
+        <div class="skill-card active" id="skCard3" onclick="toggleSkillCard(3)">
+          <strong>⚙️ Skill 3: Padronização Operacional</strong>
+          <span>Transforma gargalos em fluxos auditáveis, checklists de equipe e critérios de qualidade.</span>
+        </div>
+        <div class="skill-card active" id="skCard4" onclick="toggleSkillCard(4)">
+          <strong>💻 Skill 4: Geração de Sistemas Web</strong>
+          <span>Constrói calculadoras, painéis (dashboards) e ferramentas HTML/JS conectadas ao Hub.</span>
         </div>
       </div>
 
-      <label>Arquivo Oficial da Skill (`SKILL.md`) para Anexar na Base do Agente:</label>
+      <div class="grid-3">
+        <div>
+          <label for="skillNome">Skill Customizada Específica do Seu Caso</label>
+          <input type="text" id="skillNome" value="auditoria-e-calculo-operacional" oninput="atualizarArquitetura()">
+        </div>
+        <div>
+          <label for="skillInput">Input Obrigatório (Do Hub Central)</label>
+          <input type="text" id="skillInput" value="Tabelas de custos/insumos, histórico de pedidos e regras de margem" oninput="atualizarArquitetura()">
+        </div>
+        <div>
+          <label for="skillOutput">Output Padronizado Salvo no Hub</label>
+          <input type="text" id="skillOutput" value="Tabela auditada + Alerta de desvios de margem + Plano de ação" oninput="atualizarArquitetura()">
+        </div>
+      </div>
+
+      <label>Catálogo Oficial de Skills Gerado (`03_CATALOGO_SKILLS.md`):</label>
       <div class="spec-box" id="specMod3Skill"></div>
 
       <div class="action-bar">
-        <button class="btn btn-primary" onclick="copiarTexto('specMod3Skill')">📋 Copiar Arquivo SKILL.md</button>
+        <button class="btn btn-primary" onclick="copiarTexto('specMod3Skill')">📋 Copiar Catálogo de Skills (SKILL.md)</button>
+        <button class="btn btn-outline" onclick="baixarArquivoUnico('03_CATALOGO_SKILLS.md', document.getElementById('specMod3Skill').textContent)">💾 Baixar 03_CATALOGO_SKILLS.md</button>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="5" onchange="salvarProgresso()">
-          Skills da Empresa Criadas
+          5. Catálogo de Skills Criado
         </label>
       </div>
     </div>
@@ -590,67 +740,123 @@
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">Etapa 3.2 — O Harness (Ambiente de Orquestração, Validação e Memória)</div>
-          <div class="card-subtitle">O Harness é o trilho que governa como o problema entra, como os dados são lidos, como o Master aciona os Especialistas + Skills e como o resultado é validado antes de ir para o Hub Central:</div>
+          <div class="card-title">Etapa 3.2 — O Harness (Trilho de Execução, Orquestração e Crítica)</div>
+          <div class="card-subtitle">O Harness amarra toda a operação: define como o dado entra, como o Agente Master aciona o Especialista + Skill, como o resultado é validado contra as regras da empresa e salvo no Hub Central:</div>
         </div>
         <span class="badge">Módulo 3 • Horas 3 e 4</span>
       </div>
 
-      <label>Protocolo do Harness de Execução (`AGENT_HARNESS_PIPELINE.md`):</label>
+      <label>Protocolo Completo do Harness (`04_AGENT_HARNESS_PIPELINE.md`):</label>
       <div class="spec-box" id="specMod3Harness"></div>
 
       <div class="action-bar">
         <button class="btn btn-primary" onclick="copiarTexto('specMod3Harness')">📋 Copiar Protocolo do Harness</button>
+        <button class="btn btn-outline" onclick="baixarArquivoUnico('04_AGENT_HARNESS_PIPELINE.md', document.getElementById('specMod3Harness').textContent)">💾 Baixar 04_AGENT_HARNESS_PIPELINE.md</button>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="6" onchange="salvarProgresso()">
-          Harness Testado com Problema Real
+          6. Harness Testado com Dados Reais
         </label>
       </div>
     </div>
   </section>
 
   <!-- ===================================================================== -->
-  <!-- MÓDULO 4: FÁBRICA DE SISTEMAS, PLATAFORMAS E FERRAMENTAS INTERNAS     -->
+  <!-- MÓDULO 4: FÁBRICA DE SISTEMAS, PLATAFORMAS E SIMULADOR AO VIVO        -->
   <!-- ===================================================================== -->
   <section class="tab-panel" id="tab-mod4">
+    <!-- MELHORIA 5: MINI-SISTEMA FUNCIONAL AO VIVO DENTRO DA ABA 4 -->
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">Etapa 4.1 — Gerador de Sistemas e Plataformas Internas para a Empresa</div>
-          <div class="card-subtitle">Transforme a solução criada pelos seus agentes em um **Sistema Web / Painel / Calculadora / Aplicativo Interno** funcional para você e sua equipe usarem todos os dias:</div>
+          <div class="card-title">Etapa 4.1 — Demonstração Ao Vivo: Exemplo de Mini-Sistema Interno Gerado por Agente</div>
+          <div class="card-subtitle">Para você ver na prática o que significa "transformar dados e regras em sistema": teste abaixo um mini-sistema funcional de **Cálculo de Custo, Guardrail de Margem e Orçamento** rodando ao vivo nesta página:</div>
         </div>
-        <span class="badge">Módulo 4 • Horas 1 a 3</span>
+        <span class="badge">Simulador Funcional Ao Vivo</span>
+      </div>
+
+      <div class="proto-box">
+        <div class="grid-4">
+          <div>
+            <label for="simItem">Produto / Lote / Serviço</label>
+            <input type="text" id="simItem" value="Lote Café Especial / Pacote" oninput="rodarSimulador()">
+          </div>
+          <div>
+            <label for="simCusto">Custo Direto Unitário (R$)</label>
+            <input type="number" id="simCusto" value="32" step="0.5" oninput="rodarSimulador()">
+          </div>
+          <div>
+            <label for="simQtd">Quantidade do Pedido</label>
+            <input type="number" id="simQtd" value="25" step="1" oninput="rodarSimulador()">
+          </div>
+          <div>
+            <label for="simPreco">Preço de Venda Proposto (R$)</label>
+            <input type="number" id="simPreco" value="60" step="0.5" oninput="rodarSimulador()">
+          </div>
+        </div>
+
+        <div class="grid-4" style="margin-top: 6px;">
+          <div class="proto-kpi">
+            <span>Faturamento Total do Pedido</span>
+            <strong id="kpiFat">R$ 1.500,00</strong>
+          </div>
+          <div class="proto-kpi">
+            <span>Custo Total + Impostos (8%)</span>
+            <strong id="kpiCusto">R$ 920,00</strong>
+          </div>
+          <div class="proto-kpi">
+            <span>Lucro Líquido Real</span>
+            <strong id="kpiLucro">R$ 580,00</strong>
+          </div>
+          <div class="proto-kpi">
+            <span>Status do Guardrail (Mín. 28%)</span>
+            <strong id="kpiStatus" style="color: var(--success);">✅ 38.7% (Aprovado)</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GERADOR DO SISTEMA DO ALUNO -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Etapa 4.2 — Fábrica de Sistemas: Construa o Sistema / Plataforma da Sua Empresa</div>
+          <div class="card-subtitle">Agora gere a especificação de engenharia abaixo e cole no seu Agente Construtor (Claude Artifacts, ChatGPT Canvas ou Gemini) para ele programar o sistema sob medida do seu negócio em segundos:</div>
+        </div>
+        <span class="badge">Módulo 4 • Construção Prática</span>
       </div>
 
       <div class="grid-2">
         <div>
-          <label for="sisTipo">Qual tipo de Sistema / Plataforma vamos gerar agora?</label>
+          <label for="sisTipo">1. Qual Sistema / Plataforma Vamos Gerar para Sua Empresa?</label>
           <select id="sisTipo" onchange="atualizarArquitetura()">
-            <option value="Sistema Calculador de Custos, Margem e Gerador de Orçamentos em 1 Clique">Sistema Calculador de Custos, Margem e Orçamentos</option>
-            <option value="Plataforma Interna de Gestão de Pedidos, Produção e Controle de Qualidade">Plataforma de Gestão de Pedidos, Produção e Qualidade</option>
-            <option value="Painel Executivo (Dashboard) de Análise de Dados Financeiros e Curva ABC">Painel Executivo (Dashboard) Financeiro e Curva ABC</option>
-            <option value="Central de Operações da Equipe com Execução Guiada e Registro no Hub">Central de Operações da Equipe e Controle de Rotinas</option>
+            <option value="Sistema Calculador de Custos, Guardrail de Margem e Gerador de Orçamentos">Sistema Calculador de Custos, Margem e Gerador de Orçamentos</option>
+            <option value="Plataforma Interna de Controle de Pedidos, Produção e Estoque">Plataforma Interna de Controle de Pedidos, Produção e Estoque</option>
+            <option value="Dashboard Executivo de Análise Financeira, Despesas e Curva ABC">Dashboard Executivo de Análise Financeira e Curva ABC</option>
+            <option value="Sistema de Gestão de Equipe, Checklists Diários e Auditoria de Qualidade">Sistema de Gestão de Equipe, Checklists e Auditoria de Qualidade</option>
           </select>
         </div>
         <div>
-          <label for="sisCampos">Quais campos, cálculos ou botões seu sistema precisa ter na tela?</label>
-          <input type="text" id="sisCampos" value="Cadastro de itens/custos, cálculo automático de margem, alerta de erro, histórico salvo e exportação em PDF/Excel" oninput="atualizarArquitetura()">
+          <label for="sisCampos">2. Campos, Cálculos e Botões que Seu Sistema Deve Ter na Tela</label>
+          <input type="text" id="sisCampos" value="Entrada de itens/custos, trava automática de margem mínima, painel de indicadores (KPIs), histórico salvo no navegador e exportação em PDF/Excel" oninput="atualizarArquitetura()">
         </div>
       </div>
 
-      <label>Especificação de Engenharia para o Agente Construtor Gerar Seu Sistema Completo (HTML/JS/App):</label>
+      <label>Especificação Completa de Engenharia de Software (`05_SISTEMA_SPEC.md`):</label>
       <div class="spec-box" id="specMod4Sistema"></div>
 
       <div class="action-bar">
-        <button class="btn btn-primary" onclick="copiarTexto('specMod4Sistema')">📋 Copiar Especificação do Sistema</button>
-        <button class="btn btn-accent" onclick="window.print()">🖨️ Exportar Dossiê da Minha Arquitetura de IA</button>
+        <button class="btn btn-primary" onclick="copiarTexto('specMod4Sistema')">📋 Copiar Especificação para Criar Meu Sistema</button>
+        <a class="btn btn-outline" href="https://claude.ai" target="_blank">⚡ Gerar no Claude (Artifacts)</a>
+        <a class="btn btn-outline" href="https://chatgpt.com" target="_blank">🚀 Gerar no ChatGPT (Canvas)</a>
+        <a class="btn btn-outline" href="https://gemini.google.com" target="_blank">✨ Gerar no Google Gemini</a>
+        <button class="btn btn-accent" onclick="baixarPacoteHub()">📥 Baixar Todos os Arquivos do Meu Hub (.md)</button>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="7" onchange="salvarProgresso()">
-          Sistema da Empresa Gerado e Funcional
+          7. Sistema Interno Criado
         </label>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="8" onchange="salvarProgresso()">
-          Arquitetura Completa no Hub Central!
+          8. Hub & Arquitetura Homologados!
         </label>
       </div>
     </div>
@@ -676,31 +882,31 @@
       <div class="card-header">
         <div>
           <div class="card-title">📂 Diretório Oficial dos Sócios no Google Drive</div>
-          <div class="card-subtitle">Todos os documentos de planejamento, inscrições, planilha financeira e materiais da turma reunidos:</div>
+          <div class="card-subtitle">Todos os documentos de planejamento, inscrições, planilha financeira, slides e pasta-modelo do Hub Central reunidos:</div>
         </div>
-        <a class="btn btn-primary" href="https://drive.google.com/drive/folders/1i1dsn8D0IiyAjG-C9JD12TX4WS3nTaEd" target="_blank">📁 Abrir Pasta do Curso no Drive</a>
+        <a class="btn btn-primary" href="https://drive.google.com/drive/folders/1i1dsn8D0IiyAjG-C9JD12TX4WS3nTaEd" target="_blank">📁 Abrir Pasta Completa no Drive</a>
       </div>
 
       <div class="grid-3">
         <a class="link-card" href="https://docs.google.com/document/d/1_RbXa3wpLc_0Z1-odjp1ovKyC7RRQRZw6Z6pFJKZy6M/edit" target="_blank">
           <strong>📘 1. Master Plan e Fluxo Executivo</strong>
-          <span>Visão completa da metodologia (Diagnóstico -> Dados -> Hub -> Master/Especialistas -> Skills/Harness -> Sistemas).</span>
+          <span>Planejamento geral etapa por etapa (Diagnóstico ➔ Dados ➔ Hub ➔ Master/Especialistas ➔ Skills/Harness ➔ Sistemas).</span>
         </a>
         <a class="link-card" href="https://docs.google.com/forms/d/1LT5-DknGec3D4y5-F1nm-XfTK3U9P6yz59-9Ld4XL78/viewform" target="_blank">
-          <strong>📝 2. Google Forms de Inscrição</strong>
-          <span>Formulário online com validação de indicação (5% de desconto por indicado, teto de 10%).</span>
+          <strong>📝 2. Google Forms de Inscrição (Público)</strong>
+          <span>Link de matrícula com validação do nome do indicador (5% de desconto por indicado, teto de 10%).</span>
         </a>
         <a class="link-card" href="https://docs.google.com/spreadsheets/d/1sfELV9beqFOv8FttzIjeOD8QkmY9fPLQrfVU26zDwa0/edit" target="_blank">
           <strong>📊 3. Planilha de Inscrições e DRE Financeiro</strong>
           <span>Controle das 20 vagas, cálculo automático de descontos de indicação, custos e lucro.</span>
         </a>
-        <a class="link-card" href="https://docs.google.com/presentation/d/1yBAY6AmAHfjN7yclD-QH06Le0Nl0H9WlPtZVoKR9ix0/edit" target="_blank">
-          <strong>🖥️ 4. Apresentação Módulo 1 (Google Slides)</strong>
-          <span>Slides de apoio para o 1º encontro presencial.</span>
+        <a class="link-card" href="https://docs.google.com/document/d/1yyl0SqFU_DVM7rAOXqtXKpPVd_wsCKPy0sGcBEIbzB4/edit" target="_blank">
+          <strong>📇 4. Guia de Bancada e Apostila — Módulo 1</strong>
+          <span>Diagnóstico Empresarial, Limpeza de Dados e Estrutura do Hub Central.</span>
         </a>
-        <a class="link-card" href="https://docs.google.com/presentation/d/1xcJ_p44kkv6HrwH8suPQup2bsuqHIrOZj355HqcSXI8/edit" target="_blank">
-          <strong>🖥️ 5. Apresentação Módulos 2 a 4 (Google Slides)</strong>
-          <span>Slides de apoio para a imersão completa.</span>
+        <a class="link-card" href="https://docs.google.com/document/d/1x5JDpV-bQKewZ00si7v-1q3crg6xzfaJicbgL9szfGQ/edit" target="_blank">
+          <strong>📒 5. Guia de Bancada — Módulos 2, 3 e 4</strong>
+          <span>Construção do Agente Master, Especialistas, Catálogo de Skills, Harness e Sistemas.</span>
         </a>
         <a class="link-card" href="https://docs.google.com/document/d/1_0Lpx-AuM2d580Y_tyP0HR1pb6KoNEMhX0bfsmd6Epg/edit" target="_blank">
           <strong>🤝 6. Parcerias (ACISV/CDL) & Proposta In-Company</strong>
@@ -712,14 +918,107 @@
 
 </main>
 
-<div id="toast">✅ Especificação copiada com sucesso!</div>
+<div id="toast">✅ Ação concluída com sucesso!</div>
 
 <script>
+  // Estado das Skills selecionadas na Biblioteca (Aba 3)
+  let skillsAtivas = { 1: true, 2: true, 3: true, 4: true };
+
+  // Casos Reais de Venda Nova do Imigrante (Preenchimento em 1 Clique)
+  const PRESETS = {
+    cafe: {
+      nome: "Torrefação & Agroturismo Família Zandonadi",
+      setor: "Agroturismo, Cafés Especiais e Agroindústria",
+      problema: "Falta de controle do custo real por lote de torra/cestas coloniais, perda de recorrência de vendas para turistas da Grande Vitória que visitaram a propriedade e demora para montar propostas para empórios e cafeterias.",
+      dados: "Planilha despadronizada de custos de matéria-prima e embalagens, caderno/WhatsApp com pedidos de turistas, tabela de preços de cafés e antepastos em PDF.",
+      regras: "Margem líquida mínima de 32% no atacado e 48% no agroturismo; envio mínimo de 3kg para fora da cidade; manter rastreabilidade da safra.",
+      metaSistema: "Sistema Calculador de Custo de Lote/Combos + Painel de Recorrência de Pedidos de Turistas e Empórios",
+      dadosSujos: "Lote 14 Catuaí Vermelho 86pts: café verde R$ 1.450 sc, perda torra 16%, embalagem válvula R$ 2,10 un, rótulo R$ 0,65, venda loja R$ 38 (250g) / atacado sem cálculo fixo. Cliente João Vitória comprou 4 pacotes em julho e nunca mais foi acionado.",
+      sub1: "Agente Engenheiro de Custos de Torra, Lotes e Margem Agrícola",
+      sub2: "Agente Gestor de Qualidade, Rastreabilidade e Roteiro de Agroturismo",
+      sub3: "Agente Comercial de Recorrência (Turistas/B2B) e Construtor de Sistemas",
+      skillNome: "calculo-custo-lote-e-proposta-b2b",
+      skillInput: "Peso do lote cru, % de quebra na torra/produção, custo de embalagem e canal de venda (Loja vs. Empório)",
+      skillOutput: "Ficha técnica auditada de custo unitário + Tabela de preços com margem protegida + Proposta comercial pronta"
+    },
+    pousada: {
+      nome: "Pousada & Restaurante Mirante da Serra",
+      setor: "Hotelaria, Pousadas e Gastronomia",
+      problema: "Oscilação de ocupação entre dias de semana e feriados, descontrole no custo de insumos da cozinha (fichas técnicas desatualizadas) e falhas da equipe na padronização de governança dos chalés.",
+      dados: "Relatórios de reservas (Booking e WhatsApp), notas fiscais de compras de alimentos/bebidas, lista de tarefas de limpeza e avaliações de hóspedes.",
+      regras: "Margem mínima de 35% nas diárias e CMV máximo de 30% no restaurante; tempo máximo de resposta de cotação de 10 minutos; padrão rigoroso de inspeção de quartos.",
+      metaSistema: "Sistema Simulador de Pacotes de Hospedagem/Feriados + Calculadora de Ficha Técnica Gastronômica e Checklist de Governança",
+      dadosSujos: "Chalé Master casal fim de semana R$ 680 com café (custo lavanderia R$ 45, café da manhã R$ 38/pessoa, comissão Booking 15%). Terça a quinta fica 70% vazio. Prato Polenta com Ragú sem ficha técnica revisada desde o ano passado.",
+      sub1: "Agente Analista de Tarifário Dinâmico (Ocupação) e CMV Gastronômico",
+      sub2: "Agente Auditor de Governança Hoteleira e Padrão de Atendimento",
+      sub3: "Agente Construtor de Simuladores de Reserva e Conversão Direta",
+      skillNome: "auditoria-cmv-e-tarifario-hospedagem",
+      skillInput: "Lista de ingredientes/insumos com preços de nota fiscal + Taxa de ocupação dos quartos por período",
+      skillOutput: "Ficha técnica atualizada com CMV real + Tabela de pacotes promocionais protegendo a margem mínima de 35%"
+    },
+    comercio: {
+      nome: "Casa & Campo Materiais e Comércio Venda Nova",
+      setor: "Comércio Varejista e Distribuição",
+      problema: "Capital parado em produtos de baixo giro no estoque, demora para responder orçamentos grandes de clientes/produtores rurais e descontos dados no balcão sem calcular o impacto no lucro líquido.",
+      dados: "Relatório de estoque e vendas dos últimos 6 meses em CSV/Excel, tabela de fornecedores, cotações abertas no WhatsApp dos vendedores.",
+      regras: "Margem de contribuição mínima de 25%; desconto máximo de 5% à vista no PIX; frete grátis apenas para compras acima de R$ 800 num raio de 15km.",
+      metaSistema: "Sistema Gerador de Orçamentos Rápidos com Trava de Margem + Painel Inteligente de Giro de Estoque (Curva ABC)",
+      dadosSujos: "Item 402 Bomba Irrigação: 14 unidades paradas há 95 dias (custo R$ 620, preço R$ 890). Vendedor deu 12% de desconto ontem num pedido parcelado em 6x e comeu toda a margem.",
+      sub1: "Agente Analista de Estoque (Curva ABC), Compras e Precificação",
+      sub2: "Agente de Processos de Balcão, Logística de Entrega e Cobrança",
+      sub3: "Agente Construtor do Sistema de Orçamentos e Recuperação de Vendas",
+      skillNome: "auditoria-orcamento-e-giro-estoque",
+      skillInput: "Lista de itens do orçamento com quantidades, forma de pagamento, distância de entrega e idade do estoque",
+      skillOutput: "Orçamento calculado com trava de margem + Sugestão de item de estoque parado como combo promocional"
+    },
+    rochas: {
+      nome: "Granitos & Engenharia Serrana",
+      setor: "Serviços, Oficinas, Clínicas e Indústria/Rochas",
+      problema: "Erros de cálculo de perda de chapa/insumos nos orçamentos técnicos, atrasos no cronograma de produção/instalação por falha de comunicação interna e contratos sem revisão de cláusulas de risco.",
+      dados: "Planilha de medição de chapas/serviços, contratos de fornecimento em PDF, ordens de serviço da fábrica/oficina e histórico de custos de manutenção.",
+      regras: "Considerar quebra técnica obrigatória de 15% no cálculo de material; sinal mínimo de 40% na aprovação do pedido; multa contratual clara por atraso de obra.",
+      metaSistema: "Sistema de Orçamento Técnico com Cálculo Automático de Perda de Material + Painel de Ordens de Serviço da Produção",
+      dadosSujos: "Orçamento Bancada Cozinha + Ilha em Granito Preto São Gabriel Escovado: 6,4 m2 líquidos, cliente pediu entrega em 5 dias úteis sem pagar sinal, vendedor esqueceu de somar perda de recorte de 15% e frete para Domingos Martins.",
+      sub1: "Agente Engenheiro de Custos Industriais, Aproveitamento de Material e Contratos",
+      sub2: "Agente Controlador de PCP (Planejamento e Controle da Produção) e Segurança",
+      sub3: "Agente Arquiteto de Sistemas de Orçamentação Técnica e Propostas Executivas",
+      skillNome: "orcamento-tecnico-industrial-com-perda",
+      skillInput: "Medidas líquidas do projeto (m2/horas), tipo de material/serviço, perda técnica (%) e local de entrega/instalação",
+      skillOutput: "Memória de cálculo industrial auditada + Proposta técnica blindada + Ordem de Serviço para a produção"
+    }
+  };
+
+  function carregarPreset(chave) {
+    const p = PRESETS[chave];
+    if (!p) return;
+    document.getElementById('empNome').value = p.nome;
+    document.getElementById('empSetor').value = p.setor;
+    document.getElementById('empProblema').value = p.problema;
+    document.getElementById('empDadosBrutos').value = p.dados;
+    document.getElementById('empRegras').value = p.regras;
+    document.getElementById('empMetaSistema').value = p.metaSistema;
+    document.getElementById('inputDadosSujos').value = p.dadosSujos;
+    document.getElementById('subAgente1').value = p.sub1;
+    document.getElementById('subAgente2').value = p.sub2;
+    document.getElementById('subAgente3').value = p.sub3;
+    document.getElementById('skillNome').value = p.skillNome;
+    document.getElementById('skillInput').value = p.skillInput;
+    document.getElementById('skillOutput').value = p.skillOutput;
+    atualizarArquitetura();
+    mostrarToast('⚡ Caso real de Venda Nova carregado em todos os módulos!');
+  }
+
+  function toggleSkillCard(num) {
+    skillsAtivas[num] = !skillsAtivas[num];
+    document.getElementById('skCard' + num).classList.toggle('active', skillsAtivas[num]);
+    atualizarArquitetura();
+  }
+
   function openTab(tabId, btn) {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
-    btn.classList.add('active');
+    if (btn) btn.classList.add('active');
   }
 
   function atualizarArquitetura() {
@@ -729,6 +1028,8 @@
     const dados = document.getElementById('empDadosBrutos').value.trim() || '[Planilhas, relatórios em PDF, notas e regras operacionais da empresa]';
     const regras = document.getElementById('empRegras').value.trim() || '[Regras de margem, qualidade e prazos inegociáveis]';
     const metaSistema = document.getElementById('empMetaSistema').value.trim() || '[Sistema de gestão, cálculo e acompanhamento operacional]';
+    const dadosSujos = document.getElementById('inputDadosSujos').value.trim() || '[Cole seus dados brutos no campo acima]';
+    const formatoLimpo = document.getElementById('formatoDadosLimpos').value;
 
     const sub1 = document.getElementById('subAgente1').value.trim();
     const sub2 = document.getElementById('subAgente2').value.trim();
@@ -741,113 +1042,255 @@
     const sisTipo = document.getElementById('sisTipo').value;
     const sisCampos = document.getElementById('sisCampos').value.trim();
 
-    localStorage.setItem('cursoIA_arch', JSON.stringify({
-      nome, setor, problema, dados, regras, metaSistema, sub1, sub2, sub3, skillNome, skillInput, skillOutput, sisTipo, sisCampos
+    localStorage.setItem('cursoIA_arch_v2', JSON.stringify({
+      nome, setor, problema, dados, regras, metaSistema, dadosSujos, formatoLimpo, sub1, sub2, sub3, skillNome, skillInput, skillOutput, sisTipo, sisCampos, skillsAtivas
     }));
 
     // 1. Especificação de Tratamento de Dados e Hub Central
     document.getElementById('specMod1Dados').textContent =
-`# ESPECIFICAÇÃO DE ENGENHARIA DE DADOS E HUB CENTRAL
+`# PIPELINE DE ENGENHARIA DE DADOS E INICIALIZAÇÃO DO HUB CENTRAL
 EMPRESA: ${nome} (Venda Nova do Imigrante - ES | Setor: ${setor})
-PROBLEMA ALVO: ${problema}
-FONTES DE DADOS BRUTOS: ${dados}
-REGRAS DE NEGÓCIO: ${regras}
+PROBLEMA OPERACIONAL ALVO: ${problema}
+FONTES DE DADOS BRUTOS MAPEADAS: ${dados}
+GUARDRAILS E REGRAS INEGOCIÁVEIS: ${regras}
 
-## TAREFA DE TRATAMENTO E ESTRUTURAÇÃO DE DADOS:
-1. Analise os arquivos e dados brutos fornecidos acima.
-2. Identifique inconsistências, campos faltantes, duplicidades ou informações despadronizadas.
-3. Transforme esses dados em uma Estrutura de Dados Limpa (Tabelas padronizadas + Documento Mestre de Contexto em Markdown) pronta para ser consumida por nossa Força de Trabalho de Agentes no Hub Central da empresa.
-4. Gere o arquivo '00_DIAGNOSTICO_E_REGRAS.md' consolidando o contexto oficial da empresa para alimentar o Agente Master.`;
+## AMOSTRA DE DADOS BRUTOS PARA HIGIENIZAÇÃO IMEDIATA:
+"""
+${dadosSujos}
+"""
+
+## TAREFA DETERMINÍSTICA DO AGENTE DE DADOS:
+1. Analise e limpe os dados brutos acima, corrigindo despadronizações, calculando campos implícitos e apontando dados faltantes críticos.
+2. Converta tudo para o formato: ${formatoLimpo}.
+3. Gere o documento mestre '00_DIAGNOSTICO_E_REGRAS.md' pronto para salvar na pasta '01_Diagnostico_e_Contexto' do Hub Central da empresa.`;
 
     // 2. Agente Master (Orquestrador)
     document.getElementById('specMod2Master').textContent =
-`# SYSTEM SPECIFICATION — AGENTE MASTER (ORQUESTRADOR GERAL)
-IDENTIDADE: Você é o Agente Master (Diretor de Operações e Orquestrador de IA) da empresa ${nome} (${setor}).
-MISSÃO CENTRAL: Coordenar a resolução do problema "${problema}" garantindo respeito absoluto às regras: ${regras}.
+`# 01_MASTER_ORCHESTRATOR.md — AGENTE MASTER (DIRETOR GERAL DE IA)
+EMPRESA: ${nome} (${setor} — Venda Nova do Imigrante - ES)
+MISSÃO CENTRAL: Orquestrar a resolução definitiva do problema "${problema}" utilizando os dados do Hub Central e garantindo cumprimento estrito das regras: ${regras}.
 
-## FORÇA DE TRABALHO SOB SEU COMANDO:
-- Especialista 1: ${sub1}
-- Especialista 2: ${sub2}
-- Especialista 3: ${sub3}
+## ORGANOGRAMA DE SUB-AGENTES SOB SEU COMANDO:
+1. [${sub1}] ➔ Responsável por dados, custos, margens e viabilidade financeira;
+2. [${sub2}] ➔ Responsável por processos, auditoria operacional e padrões da equipe;
+3. [${sub3}] ➔ Responsável por construir ferramentas/sistemas (${metaSistema}) e conversão comercial.
 
-## PROTOCOLO DE ORQUESTRAÇÃO (NÃO PULE ETAPAS):
-1. RECEPÇÃO E DIAGNÓSTICO: Sempre que receber uma demanda ou conjunto de dados do empresário, consulte primeiro o arquivo '00_DIAGNOSTICO_E_REGRAS.md' e os dados tratados do Hub Central.
-2. DECOMPOSIÇÃO: Quebre o problema em um plano de execução sequencial numerado, indicando qual Agente Especializado executará cada etapa e qual Skill será acionada.
-3. CONTROLE DE QUALIDADE: Valide o resultado entregue pelos agentes especialistas contra as regras de negócio (${regras}) antes de consolidar a entrega final para o Hub Central da empresa.`;
+## PROTOCOLO DE ORQUESTRAÇÃO (CICLO DO HARNESS):
+1. LEITURA DE CONTEXTO: Antes de responder qualquer demanda, consulte '00_DIAGNOSTICO_E_REGRAS.md' e as tabelas da pasta '02_Bases_de_Dados_Tratadas'.
+2. DECOMPOSIÇÃO E ROTEAMENTO: Divida o problema apresentado em tarefas numeradas, indicando qual Agente Especializado atua em cada etapa e qual Skill será executada.
+3. AUDITORIA DE GUARDRAILS: Rejeite qualquer saída que viole as regras (${regras}) e consolide o entregável final para a pasta '05_Entregas_e_Sistemas' do Hub Central.`;
 
     // 3. Agentes Especializados
     document.getElementById('specMod2Especialistas').textContent =
-`# CONFIGURAÇÃO DOS 3 AGENTES ESPECIALIZADOS DA EMPRESA (${nome})
+`# 02_SPECIALIST_AGENTS.md — FORÇA DE TRABALHO ESPECIALIZADA (${nome})
 
-## 1. ${sub1}
-- Escopo: Ler as bases de dados tratadas (${dados}), cruzar indicadores financeiros/operacionais, calcular custos reais, margens e identificar anomalias.
-- Regra: Nunca inventar números; trabalhar estritamente sobre as tabelas do Hub Central.
+## ESPECIALISTA #1: ${sub1}
+- Papel: Engenheiro de Dados e Analista Financeiro Sênior.
+- Insumos do Hub: ${dados}.
+- Diretriz Técnica: Higienizar planilhas, calcular custos reais e margens por item/lote e bloquear qualquer operação que viole (${regras}).
 
-## 2. ${sub2}
-- Escopo: Atacar o gargalo "${problema}", desenhando fluxos operacionais à prova de falhas, checklists de verificação e protocolos para a equipe humana.
-- Regra: Respeitar os limites operacionais (${regras}).
+## ESPECIALISTA #2: ${sub2}
+- Papel: Engenheiro de Operações, Processos e Controle de Qualidade.
+- Problema Alvo: "${problema}".
+- Diretriz Técnica: Transformar rotinas vulneráveis a erro humano em fluxos determinísticos, listas de verificação e protocolos auditáveis.
 
-## 3. ${sub3}
-- Escopo: Transformar as análises e regras dos Especialistas 1 e 2 em ferramentas práticas, sistemas interativos (${metaSistema}) e fluxos de conversão comercial.`;
+## ESPECIALISTA #3: ${sub3}
+- Papel: Engenheiro de Software Interno e Estrategista Comercial.
+- Meta de Construção: "${metaSistema}".
+- Diretriz Técnica: Pegar as tabelas e regras dos Especialistas #1 e #2 e gerar ferramentas visuais, calculadoras e sistemas internos para a equipe operar sem precisar programar.`;
 
-    // 4. Construtor de Skill (SKILL.md)
+    // 4. Construtor de Skills (Catálogo Múltiplo)
+    let listaSkills = [];
+    if (skillsAtivas[1]) listaSkills.push(`### Skill Padronizada A: higienizacao-e-auditoria-dados\n- Gatilho: Recebimento de planilhas, PDFs, notas ou anotações brutas.\n- Ação: Padroniza colunas, limpa formatos numéricos, identifica lacunas e exporta tabela limpa para o Hub Central.`);
+    if (skillsAtivas[2]) listaSkills.push(`### Skill Padronizada B: calculo-custos-e-guardrail-margem\n- Gatilho: Solicitação de cotação, formação de preço de lote ou análise de rentabilidade.\n- Ação: Calcula custo direto + impostos/perdas e aplica trava automática nas regras (${regras}).`);
+    if (skillsAtivas[3]) listaSkills.push(`### Skill Padronizada C: padronizacao-e-auditoria-operacional\n- Gatilho: Identificação de retrabalho ou falha de execução na operação.\n- Ação: Gera protocolo passo a passo com critérios de aceite e checklist de verificação.`);
+    if (skillsAtivas[4]) listaSkills.push(`### Skill Padronizada D: geracao-de-sistema-interno\n- Gatilho: Necessidade de automatizar cálculo, painel ou fluxo recorrente da equipe.\n- Ação: Gera aplicação web completa em HTML/CSS/JS pronta para rodar no navegador da empresa.`);
+
     document.getElementById('specMod3Skill').textContent =
 `---
 name: ${skillNome}
-description: Skill oficial da empresa ${nome} para resolver e padronizar o tratamento de "${problema}".
+empresa: ${nome}
+description: Catálogo oficial de Skills operacionais para resolver "${problema}".
 ---
-# Instruções de Execução da Skill: ${skillNome}
+# 03_CATALOGO_SKILLS.md — HABILIDADES DETERMINÍSTICAS DOS AGENTES
 
-## 1. Gatilho de Acionamento (When to Use)
-Acione esta Skill sempre que o Agente Master ou o usuário fornecer dados referentes a: ${skillInput}.
+## SKILL PRINCIPAL CUSTOMIZADA: ${skillNome}
+- **Gatilho de Acionamento:** Sempre que o Agente Master ou usuário fornecer dados sobre: ${skillInput}.
+- **Schema de Entrada (Validação):** Conferir presença obrigatória de: ${skillInput}. Se faltar dado crítico, pausar e perguntar antes de calcular.
+- **Regras de Processamento (Guardrails):** Aplicar estritamente: ${regras}. Proibido estimar valores não presentes no Hub Central.
+- **Contrato de Saída no Hub:** Entregar ${skillOutput} na pasta '05_Entregas_e_Sistemas'.
 
-## 2. Validação de Dados de Entrada (Input Schema)
-- Verifique se os seguintes dados estão presentes: ${skillInput}.
-- Se algum dado crítico estiver ausente ou inconsistente, interrompa e solicite a confirmação antes de calcular.
-
-## 3. Pipeline Determinístico de Processamento
-1. Higienize e normalize os valores recebidos;
-2. Aplique as regras de negócio da empresa: ${regras};
-3. Compare os resultados encontrados com a meta do negócio e destaque desvios críticos.
-
-## 4. Formato de Saída no Hub Central (Output Contract)
-Gere obrigatoriamente: ${skillOutput}, pronto para ser arquivado na pasta '04_ENTREGAS_E_SISTEMAS' do Hub Central.`;
+## SKILLS COMPLEMENTARES ATIVAS NO HARNESS DA EMPRESA:
+${listaSkills.join('\n\n')}`;
 
     // 5. Protocolo do Harness
     document.getElementById('specMod3Harness').textContent =
-`# ARQUITETURA DO HARNESS DE EXECUÇÃO — ${nome}
-Este Harness conecta o Hub Central de Dados, o Agente Master, os Especialistas e o Catálogo de Skills:
+`# 04_AGENT_HARNESS_PIPELINE.md — ARQUITETURA DE CONTROLE E ORQUESTRAÇÃO
+EMPRESA: ${nome} | META: ${metaSistema}
 
-[ETAPA 1: INGESTÃO] ➔ Recebe dados brutos (${dados}) e aplica limpeza estrutural.
-[ETAPA 2: ROTEAMENTO MASTER] ➔ O Agente Master analisa a demanda contra '00_DIAGNOSTICO_E_REGRAS.md'.
-[ETAPA 3: EXECUÇÃO DE SKILL] ➔ O Especialista designado carrega a skill '${skillNome}' e processa '${skillInput}'.
-[ETAPA 4: VERIFICAÇÃO (CRITIQUE)] ➔ O Harness verifica se todas as restrições (${regras}) foram cumpridas sem alucinação.
-[ETAPA 5: PERSISTÊNCIA NO HUB] ➔ Salva '${skillOutput}' no repositório central da empresa e atualiza o painel de controle.`;
+[1. CAMADA DE INGESTÃO E DADOS]
+   └── Lê dados brutos (${dados}) ➔ Executa Skill 'higienizacao-e-auditoria-dados' ➔ Salva na pasta '02_Bases_de_Dados_Tratadas'.
+
+[2. CAMADA DE ROTEAMENTO (AGENTE MASTER)]
+   └── Recebe o problema ("${problema}") ➔ Consulta '00_DIAGNOSTICO_E_REGRAS.md' ➔ Decompõe plano de trabalho.
+
+[3. CAMADA DE EXECUÇÃO ESPECIALIZADA + SKILLS]
+   ├── Aciona [${sub1}] + Skill '${skillNome}' sobre (${skillInput});
+   ├── Aciona [${sub2}] para blindar o fluxo operacional;
+   └── Aciona [${sub3}] para empacotar a solução em ferramenta prática.
+
+[4. CAMADA DE VERIFICAÇÃO (CRITIQUE & GUARDRAILS)]
+   └── Verifica se o resultado respeita 100% das travas: (${regras}). Se violar, retorna ao Especialista para correção.
+
+[5. CAMADA DE PERSISTÊNCIA NO HUB CENTRAL]
+   └── Registra (${skillOutput}) e atualiza o sistema na pasta '05_Entregas_e_Sistemas'.`;
 
     // 6. Fábrica de Sistemas (Módulo 4)
     document.getElementById('specMod4Sistema').textContent =
-`# ESPECIFICAÇÃO DE ENGENHARIA DE SISTEMA INTERNO (PARA O AGENTE CONSTRUTOR)
-Atue como um Engenheiro de Software Sênior. Construa uma aplicação web completa, interativa, responsiva e pronta para uso (em arquivo único HTML + CSS + JavaScript, salvando dados no navegador e exportando relatórios) para a empresa "${nome}" (${setor} em Venda Nova do Imigrante - ES).
+`# 05_SISTEMA_SPEC.md — ESPECIFICAÇÃO DE ENGENHARIA PARA O AGENTE CONSTRUTOR
+Atue como um Engenheiro de Software Sênior e Arquiteto de Sistemas Empresariais.
+Construa uma aplicação web completa, interativa, moderna e pronta para uso imediato (em arquivo único HTML5 + CSS3 + JavaScript Vanilla, sem dependências externas, salvando dados em localStorage e exportando relatórios) para a empresa "${nome}" (${setor} em Venda Nova do Imigrante - ES).
 
-## OBJETIVO DO SISTEMA:
-Construir um "${sisTipo}" focado em resolver definitivamente o problema: "${problema}".
+## 1. OBJETIVO DO SISTEMA INTERNO:
+Desenvolver um "${sisTipo}" desenhado especificamente para eliminar o seguinte gargalo da empresa:
+"${problema}"
 
-## REGRAS DE NEGÓCIO EMBUTIDAS NO SISTEMA:
-- Aplique automaticamente nas fórmulas do sistema as seguintes regras: ${regras}.
-- Estruture os dados com base em: ${dados}.
+## 2. REGRAS DE NEGÓCIO E GUARDRAILS EMBUTIDOS NO CÓDIGO:
+O sistema deve validar e aplicar automaticamente em seus cálculos as seguintes regras:
+- ${regras};
+- Baseado na estrutura de dados: ${dados};
+- Entregando como saída: ${skillOutput}.
 
-## FUNCIONALIDADES E CAMPOS OBRIGATÓRIOS NA TELA:
-- ${sisCampos};
-- Painel superior de indicadores em tempo real (KPIs);
-- Validação automática de erros de preenchimento;
-- Botão para exportar/imprimir o relatório pronto para enviar ao Hub Central da empresa ou WhatsApp.`;
+## 3. COMPONENTES E FUNCIONALIDADES OBRIGATÓRIAS NA TELA:
+- Cabeçalho executivo com identidade visual da empresa (${nome});
+- Cards de KPIs em tempo real no topo calculando totais, margens e status de conformidade (Aprovado em verde / Alerta de Violação de Regra em vermelho);
+- Formulário e tabela dinâmica contendo: ${sisCampos};
+- Botões de ação rápida: "Salvar Registro no Histórico", "Exportar CSV/Excel para o Hub Central" e "Imprimir / Gerar PDF Executivo".`;
+  }
+
+  // Simulador Funcional Ao Vivo (Aba 4)
+  function rodarSimulador() {
+    const custo = parseFloat(document.getElementById('simCusto').value) || 0;
+    const qtd = parseFloat(document.getElementById('simQtd').value) || 0;
+    const preco = parseFloat(document.getElementById('simPreco').value) || 0;
+
+    const faturamento = preco * qtd;
+    const impostos = faturamento * 0.08;
+    const custoTotal = (custo * qtd) + impostos;
+    const lucro = faturamento - custoTotal;
+    const margem = faturamento > 0 ? (lucro / faturamento) * 100 : 0;
+
+    const fmt = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    document.getElementById('kpiFat').textContent = fmt(faturamento);
+    document.getElementById('kpiCusto').textContent = fmt(custoTotal);
+    document.getElementById('kpiLucro').textContent = fmt(lucro);
+
+    const elStatus = document.getElementById('kpiStatus');
+    if (margem >= 28) {
+      elStatus.style.color = '#1b7a34';
+      elStatus.textContent = `✅ ${margem.toFixed(1)}% (Aprovado)`;
+    } else {
+      elStatus.style.color = '#c0392b';
+      elStatus.textContent = `⚠️ ${margem.toFixed(1)}% (Abaixo de 28%!)`;
+    }
+  }
+
+  // Download de arquivos .md reais para o Hub Central no computador do aluno
+  function baixarArquivoUnico(nomeArquivo, conteudo) {
+    const blob = new Blob([conteudo], { type: 'text/markdown;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = nomeArquivo;
+    a.click();
+    mostrarToast(`📥 Arquivo ${nomeArquivo} baixado!`);
+  }
+
+  function baixarPacoteHub() {
+    const dossieCompleto =
+      document.getElementById('specMod1Dados').textContent + '\n\n========================================\n\n' +
+      document.getElementById('specMod2Master').textContent + '\n\n========================================\n\n' +
+      document.getElementById('specMod2Especialistas').textContent + '\n\n========================================\n\n' +
+      document.getElementById('specMod3Skill').textContent + '\n\n========================================\n\n' +
+      document.getElementById('specMod3Harness').textContent + '\n\n========================================\n\n' +
+      document.getElementById('specMod4Sistema').textContent;
+    const nomeEmp = (document.getElementById('empNome').value.trim() || 'Minha_Empresa').replace(/\s+/g, '_');
+    baixarArquivoUnico(`HUB_CENTRAL_COMPLETO_${nomeEmp}.md`, dossieCompleto);
+  }
+
+  // Exportar e Importar Projeto em JSON (Transferência Celular <-> Notebook <-> Telão do Instrutor)
+  function exportarProjetoJSON() {
+    const dados = localStorage.getItem('cursoIA_arch_v2') || '{}';
+    const nomeEmp = (document.getElementById('empNome').value.trim() || 'Empresa').replace(/\s+/g, '_');
+    const blob = new Blob([dados], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `Projeto_IA_${nomeEmp}.json`;
+    a.click();
+    mostrarToast('📤 Arquivo de projeto (.json) salvo para enviar ou abrir em outro computador!');
+  }
+
+  function importarProjetoJSON(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        const d = JSON.parse(e.target.result);
+        aplicarDadosNoFormulario(d);
+        atualizarArquitetura();
+        mostrarToast('📂 Projeto carregado com sucesso na plataforma!');
+      } catch (err) {
+        alert('Arquivo de projeto inválido.');
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  function enviarWhatsAppInstrutor() {
+    const nome = document.getElementById('empNome').value.trim() || 'Minha Empresa';
+    const setor = document.getElementById('empSetor').value;
+    const problema = document.getElementById('empProblema').value.trim() || 'Não informado';
+    const meta = document.getElementById('empMetaSistema').value.trim() || 'Não informado';
+    const skill = document.getElementById('skillNome').value.trim();
+    const msg = encodeURIComponent(
+      `*ARQUITETURA DE AGENTES & HARNESS — ${nome.toUpperCase()}*\n\n` +
+      `📍 *Setor:* ${setor}\n` +
+      `🎯 *Problema Alvo:* ${problema}\n` +
+      `🧠 *Agente Master + 3 Especialistas:* Configurados\n` +
+      `🛠️ *Skill Principal:* ${skill}\n` +
+      `💻 *Sistema Alvo (Módulo 4):* ${meta}`
+    );
+    window.open(`https://wa.me/?text=${msg}`, '_blank');
+  }
+
+  function aplicarDadosNoFormulario(d) {
+    if (d.nome && d.nome !== '[Nome da Empresa]') document.getElementById('empNome').value = d.nome;
+    if (d.setor) document.getElementById('empSetor').value = d.setor;
+    if (d.problema && !d.problema.startsWith('[')) document.getElementById('empProblema').value = d.problema;
+    if (d.dados && !d.dados.startsWith('[')) document.getElementById('empDadosBrutos').value = d.dados;
+    if (d.regras && !d.regras.startsWith('[')) document.getElementById('empRegras').value = d.regras;
+    if (d.metaSistema && !d.metaSistema.startsWith('[')) document.getElementById('empMetaSistema').value = d.metaSistema;
+    if (d.dadosSujos && !d.dadosSujos.startsWith('[')) document.getElementById('inputDadosSujos').value = d.dadosSujos;
+    if (d.sub1) document.getElementById('subAgente1').value = d.sub1;
+    if (d.sub2) document.getElementById('subAgente2').value = d.sub2;
+    if (d.sub3) document.getElementById('subAgente3').value = d.sub3;
+    if (d.skillNome) document.getElementById('skillNome').value = d.skillNome;
+    if (d.skillInput) document.getElementById('skillInput').value = d.skillInput;
+    if (d.skillOutput) document.getElementById('skillOutput').value = d.skillOutput;
+    if (d.sisTipo) document.getElementById('sisTipo').value = d.sisTipo;
+    if (d.sisCampos) document.getElementById('sisCampos').value = d.sisCampos;
   }
 
   function copiarTexto(id) {
     navigator.clipboard.writeText(document.getElementById(id).textContent);
+    mostrarToast('✅ Copiado para a área de transferência!');
+  }
+
+  function mostrarToast(msg) {
     const t = document.getElementById('toast');
+    t.textContent = msg;
     t.style.display = 'block';
-    setTimeout(() => { t.style.display = 'none'; }, 2400);
+    setTimeout(() => { t.style.display = 'none'; }, 2600);
   }
 
   function salvarProgresso() {
@@ -864,7 +1307,7 @@ Construir um "${sisTipo}" focado em resolver definitivamente o problema: "${prob
         c.parentElement.classList.remove('done');
       }
     });
-    localStorage.setItem('cursoIA_arch_prog', JSON.stringify(st));
+    localStorage.setItem('cursoIA_arch_prog_v2', JSON.stringify(st));
     const pct = Math.round((done / checks.length) * 100);
     document.getElementById('progressBar').style.width = pct + '%';
     document.getElementById('progressText').textContent = `${pct}% (${done}/${checks.length} marcos)`;
@@ -902,19 +1345,14 @@ Construir um "${sisTipo}" focado em resolver definitivamente o problema: "${prob
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('cursoIA_arch');
+    const saved = localStorage.getItem('cursoIA_arch_v2');
     if (saved) {
-      try {
-        const d = JSON.parse(saved);
-        if (d.nome && d.nome !== '[Nome da Empresa]') document.getElementById('empNome').value = d.nome;
-        if (d.setor) document.getElementById('empSetor').value = d.setor;
-        if (d.problema && !d.problema.startsWith('[')) document.getElementById('empProblema').value = d.problema;
-        if (d.dados && !d.dados.startsWith('[')) document.getElementById('empDadosBrutos').value = d.dados;
-        if (d.regras && !d.regras.startsWith('[')) document.getElementById('empRegras').value = d.regras;
-        if (d.metaSistema && !d.metaSistema.startsWith('[')) document.getElementById('empMetaSistema').value = d.metaSistema;
-      } catch (e) {}
+      try { aplicarDadosNoFormulario(JSON.parse(saved)); } catch (e) {}
+    } else {
+      // Carrega o preset de Café & Agroturismo por padrão para nunca abrir vazio!
+      carregarPreset('cafe');
     }
-    const savedProg = localStorage.getItem('cursoIA_arch_prog');
+    const savedProg = localStorage.getItem('cursoIA_arch_prog_v2');
     if (savedProg) {
       try {
         const p = JSON.parse(savedProg);
@@ -924,6 +1362,7 @@ Construir um "${sisTipo}" focado em resolver definitivamente o problema: "${prob
       } catch (e) {}
     }
     atualizarArquitetura();
+    rodarSimulador();
     salvarProgresso();
   });
 </script>
