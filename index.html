@@ -11,7 +11,7 @@
       --primary-light: #236346;
       --accent: #d4822a;
       --accent-bg: #fef6ec;
-      --bg: #f0f5f2;
+      --bg: #f2f6f4;
       --card: #ffffff;
       --text: #16241d;
       --muted: #54665d;
@@ -28,19 +28,19 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.55;
-      padding-bottom: 70px;
+      padding-bottom: 80px;
     }
     header {
       background: linear-gradient(135deg, var(--primary-dark), var(--primary));
       color: #fff;
-      padding: 20px 20px 16px;
+      padding: 18px 20px;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.16);
     }
     .header-inner {
-      max-width: 1200px;
+      max-width: 1160px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
@@ -49,12 +49,12 @@
       gap: 14px;
     }
     .brand h1 {
-      font-size: 1.3rem;
+      font-size: 1.28rem;
       font-weight: 800;
       letter-spacing: -0.3px;
     }
     .brand span {
-      font-size: 0.83rem;
+      font-size: 0.82rem;
       opacity: 0.9;
       display: block;
       margin-top: 2px;
@@ -69,7 +69,7 @@
       background: rgba(255,255,255,0.12);
       padding: 8px 14px;
       border-radius: 10px;
-      min-width: 250px;
+      min-width: 230px;
       border: 1px solid rgba(255,255,255,0.22);
     }
     .progress-label {
@@ -92,7 +92,7 @@
       transition: width 0.35s ease;
     }
     .top-utility-bar {
-      max-width: 1200px;
+      max-width: 1160px;
       margin: 14px auto 0;
       padding: 0 16px;
       display: flex;
@@ -117,7 +117,7 @@
       background: #eef5f1;
       border: 1px solid #c2d6ca;
       color: var(--primary-dark);
-      padding: 6px 10px;
+      padding: 6px 11px;
       border-radius: 7px;
       font-size: 0.8rem;
       font-weight: 700;
@@ -130,7 +130,7 @@
       border-color: var(--primary);
     }
     .nav-tabs {
-      max-width: 1200px;
+      max-width: 1160px;
       margin: 14px auto 0;
       padding: 0 16px;
       display: flex;
@@ -142,10 +142,10 @@
       background: var(--card);
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 11px 15px;
+      padding: 11px 16px;
       border-radius: 10px;
       font-weight: 700;
-      font-size: 0.86rem;
+      font-size: 0.87rem;
       cursor: pointer;
       white-space: nowrap;
       transition: all 0.2s;
@@ -158,10 +158,10 @@
       background: var(--primary);
       color: #fff;
       border-color: var(--primary);
-      box-shadow: 0 4px 12px rgba(20, 61, 43, 0.24);
+      box-shadow: 0 4px 12px rgba(20, 61, 43, 0.22);
     }
     .main-container {
-      max-width: 1200px;
+      max-width: 1160px;
       margin: 14px auto 0;
       padding: 0 16px;
     }
@@ -175,7 +175,7 @@
       background: linear-gradient(135deg, #fff9f0, #f9ecda);
       border: 2px solid #e0ba85;
       border-radius: 12px;
-      padding: 16px 20px;
+      padding: 15px 18px;
       margin-bottom: 18px;
       display: flex;
       flex-wrap: wrap;
@@ -185,7 +185,7 @@
     }
     .architecture-banner h3 {
       color: #78470d;
-      font-size: 0.98rem;
+      font-size: 0.96rem;
     }
     .arch-flow {
       display: flex;
@@ -196,15 +196,13 @@
     .arch-pill {
       font-size: 0.77rem;
       font-weight: 700;
-      padding: 7px 11px;
+      padding: 6px 11px;
       border-radius: 8px;
       background: #fff;
       border: 1px solid #d5b280;
       color: #693d0a;
       cursor: pointer;
-      transition: transform 0.15s;
     }
-    .arch-pill:hover { transform: translateY(-2px); }
     .arch-pill.ok {
       background: var(--success-bg);
       border-color: var(--success);
@@ -214,8 +212,8 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 24px;
-      margin-bottom: 20px;
+      padding: 22px;
+      margin-bottom: 18px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.03);
     }
     .card-header {
@@ -223,17 +221,17 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       border-bottom: 1px solid #e8efeb;
-      padding-bottom: 12px;
+      padding-bottom: 10px;
     }
     .card-title {
-      font-size: 1.14rem;
+      font-size: 1.12rem;
       font-weight: 800;
       color: var(--primary-dark);
     }
     .card-subtitle {
-      font-size: 0.89rem;
+      font-size: 0.88rem;
       color: var(--muted);
       margin-top: 3px;
     }
@@ -243,64 +241,77 @@
       border: 1px solid #edd0ab;
       padding: 4px 10px;
       border-radius: 999px;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
       white-space: nowrap;
     }
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
     @media (max-width: 820px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
     label {
       display: block;
-      font-size: 0.84rem;
+      font-size: 0.83rem;
       font-weight: 700;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       color: var(--primary-dark);
     }
     input[type="text"], input[type="number"], select, textarea {
       width: 100%;
-      padding: 10px 12px;
+      padding: 9px 11px;
       border: 1px solid var(--border);
       border-radius: 8px;
-      font-size: 0.92rem;
+      font-size: 0.91rem;
       font-family: inherit;
       background: #fff;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-    textarea { resize: vertical; min-height: 74px; }
+    textarea { resize: vertical; min-height: 70px; }
     input:focus, select:focus, textarea:focus {
       outline: none;
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(20, 61, 43, 0.12);
     }
+    /* Executive Summary Visual Box before technical code */
+    .exec-summary-box {
+      background: #f6faf7;
+      border: 1px solid #c6dcd0;
+      border-left: 5px solid var(--primary);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 8px 0;
+      font-size: 0.9rem;
+    }
+    .exec-summary-box strong { color: var(--primary-dark); }
     .spec-box {
+      display: none;
       background: var(--code-bg);
       color: var(--code-text);
       border-radius: 10px;
-      padding: 16px;
+      padding: 15px;
       margin: 10px 0;
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-      font-size: 0.85rem;
+      font-size: 0.83rem;
       white-space: pre-wrap;
-      line-height: 1.5;
+      line-height: 1.48;
       border-left: 5px solid var(--accent);
-      max-height: 360px;
+      max-height: 320px;
       overflow-y: auto;
     }
+    .spec-box.open { display: block; }
     .action-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
       align-items: center;
-      margin-top: 12px;
+      margin-top: 10px;
     }
     .btn {
       border: none;
-      padding: 9px 15px;
+      padding: 9px 14px;
       border-radius: 8px;
       font-weight: 700;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -321,29 +332,29 @@
       align-items: center;
       gap: 8px;
       background: #edf3ef;
-      padding: 8px 14px;
+      padding: 8px 13px;
       border-radius: 8px;
       font-weight: 700;
-      font-size: 0.84rem;
+      font-size: 0.83rem;
       cursor: pointer;
       user-select: none;
       border: 1px solid #c5d8cc;
     }
-    .step-check input { width: 18px; height: 18px; accent-color: var(--success); cursor: pointer; }
+    .step-check input { width: 17px; height: 17px; accent-color: var(--success); cursor: pointer; }
     .step-check.done { background: var(--success-bg); color: var(--success); border-color: #95d3a4; }
     .hub-folder {
       background: #f7faf8;
       border: 1px dashed var(--primary);
       border-radius: 10px;
-      padding: 14px;
+      padding: 13px;
     }
-    .hub-folder h4 { color: var(--primary); font-size: 0.92rem; margin-bottom: 6px; }
-    .hub-folder ul { list-style: none; font-size: 0.83rem; color: var(--muted); }
+    .hub-folder h4 { color: var(--primary); font-size: 0.9rem; margin-bottom: 6px; }
+    .hub-folder ul { list-style: none; font-size: 0.82rem; color: var(--muted); }
     .hub-folder li { margin-bottom: 4px; }
     .skill-card {
       border: 2px solid var(--border);
       border-radius: 10px;
-      padding: 12px;
+      padding: 11px;
       background: #fbfdfc;
       cursor: pointer;
       transition: all 0.18s;
@@ -354,12 +365,12 @@
     }
     .skill-card strong {
       display: block;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       color: var(--primary-dark);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     .skill-card span {
-      font-size: 0.77rem;
+      font-size: 0.76rem;
       color: var(--muted);
       display: block;
     }
@@ -367,38 +378,38 @@
       background: #f8fbf9;
       border: 2px solid var(--primary);
       border-radius: 12px;
-      padding: 18px;
-      margin-top: 10px;
+      padding: 16px;
+      margin-top: 8px;
     }
     .proto-kpi {
       background: #fff;
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 12px;
+      padding: 11px;
       text-align: center;
     }
-    .proto-kpi span { font-size: 0.78rem; color: var(--muted); display: block; }
-    .proto-kpi strong { font-size: 1.25rem; color: var(--primary-dark); }
+    .proto-kpi span { font-size: 0.76rem; color: var(--muted); display: block; }
+    .proto-kpi strong { font-size: 1.2rem; color: var(--primary-dark); }
     .timer-box {
       background: var(--primary-dark);
       color: #fff;
-      padding: 20px;
+      padding: 18px;
       border-radius: 12px;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
     .timer-display {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       font-weight: 800;
       font-variant-numeric: tabular-nums;
-      margin: 8px 0;
+      margin: 6px 0;
       color: #4ade80;
     }
     .link-card {
       display: block;
       background: #f9fbf9;
       border: 1px solid var(--border);
-      padding: 14px 16px;
+      padding: 13px 15px;
       border-radius: 10px;
       text-decoration: none;
       color: var(--text);
@@ -409,8 +420,35 @@
       background: #eef6f1;
       transform: translateY(-2px);
     }
-    .link-card strong { display: block; color: var(--primary); font-size: 0.94rem; margin-bottom: 4px; }
-    .link-card span { font-size: 0.81rem; color: var(--muted); }
+    .link-card strong { display: block; color: var(--primary); font-size: 0.92rem; margin-bottom: 3px; }
+    .link-card span { font-size: 0.8rem; color: var(--muted); }
+    footer {
+      max-width: 1160px;
+      margin: 30px auto 0;
+      padding: 16px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .lock-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      cursor: pointer;
+    }
+    .lock-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
     #toast {
       position: fixed;
       bottom: 24px;
@@ -433,16 +471,15 @@
   <div class="header-inner">
     <div class="brand">
       <h1>⚙️ Arquitetura de Agentes, Skills, Harness & Sistemas — Venda Nova (ES)</h1>
-      <span>Termos Técnicos Oficiais + Tradução Executiva entre Parênteses • Modelo Bancada Dupla (Dono + Braço Direito)</span>
+      <span>Do Diagnóstico e Data Cleaning (Limpeza de Dados) à Força de Trabalho Digital • Bancada Dupla</span>
     </div>
     <div class="header-controls">
-      <button class="btn btn-accent btn-sm" onclick="baixarPacoteHub()">📥 Baixar Arquivos do Meu Hub (.md)</button>
-      <button class="btn btn-outline btn-sm" style="background:rgba(255,255,255,0.14); color:#fff; border-color:rgba(255,255,255,0.35);" onclick="exportarProjetoJSON()">📤 Salvar/Transferir Projeto</button>
-      <button class="btn btn-outline btn-sm" style="background:rgba(255,255,255,0.14); color:#fff; border-color:rgba(255,255,255,0.35);" onclick="enviarWhatsAppInstrutor()">📲 Enviar p/ Instrutor</button>
+      <button class="btn btn-accent btn-sm" onclick="baixarPacoteHub()">📥 Baixar Meu Knowledge Hub (.md)</button>
+      <button class="btn btn-outline btn-sm" style="background:rgba(255,255,255,0.14); color:#fff; border-color:rgba(255,255,255,0.35);" onclick="enviarWhatsAppInstrutor()">📲 Enviar p/ Monitor</button>
       <div class="progress-widget">
         <div class="progress-label">
-          <span>Implantação do Harness (Esteira)</span>
-          <span id="progressText">0% (0/8 marcos)</span>
+          <span>Progresso do Aluno</span>
+          <span id="progressText">0% (0/8 etapas)</span>
         </div>
         <div class="progress-bar-bg">
           <div class="progress-bar-fill" id="progressBar"></div>
@@ -454,24 +491,26 @@
 
 <div class="top-utility-bar">
   <div class="preset-group">
-    <span>⚡ Preencher com Kit Lego Setorial de Venda Nova (1 Clique):</span>
+    <span>🧱 Carregar Kit Lego do Seu Setor (1 Clique):</span>
     <button class="preset-btn" onclick="carregarPreset('cafe')">☕ Cafés & Agroturismo</button>
     <button class="preset-btn" onclick="carregarPreset('pousada')">🏨 Pousada & Restaurante</button>
     <button class="preset-btn" onclick="carregarPreset('comercio')">🛒 Comércio & Distribuição</button>
     <button class="preset-btn" onclick="carregarPreset('rochas')">🪨 Indústria/Rochas & Serviços</button>
   </div>
   <div>
+    <button class="preset-btn" onclick="exportarProjetoJSON()">💾 Salvar Backup (.json)</button>
     <input type="file" id="fileImportJSON" style="display:none" accept=".json" onchange="importarProjetoJSON(event)">
-    <button class="preset-btn" onclick="document.getElementById('fileImportJSON').click()">📂 Abrir Arquivo de Projeto (.json)</button>
+    <button class="preset-btn" onclick="document.getElementById('fileImportJSON').click()">📂 Abrir Backup</button>
   </div>
 </div>
 
+<!-- BARRA DE NAVEGAÇÃO LIMPA (APENAS OS 4 MÓDULOS DO ALUNO; ABA DOS SÓCIOS OCULTA POR PIN) -->
 <nav class="nav-tabs">
   <button class="tab-btn active" id="btn-tab-mod1" onclick="openTab('tab-mod1', this)">🔍 Mód. 1: Diagnóstico, Data Cleaning (Limpeza) & Hub</button>
   <button class="tab-btn" id="btn-tab-mod2" onclick="openTab('tab-mod2', this)">🧠 Mód. 2: Master Orchestrator (Gerente) & Sub-Agents</button>
   <button class="tab-btn" id="btn-tab-mod3" onclick="openTab('tab-mod3', this)">🛠️ Mód. 3: Skills (Habilidades) & Harness (Esteira)</button>
-  <button class="tab-btn" id="btn-tab-mod4" onclick="openTab('tab-mod4', this)">💻 Mód. 4: Artifacts & Vibe Coding (Fábrica de Sistemas)</button>
-  <button class="tab-btn" id="btn-tab-socios" onclick="openTab('tab-socios', this)">🧭 Central dos Sócios, Clínica de Mesa & Cotador</button>
+  <button class="tab-btn" id="btn-tab-mod4" onclick="openTab('tab-mod4', this)">💻 Mód. 4: Artifacts (Fábrica de Sistemas Internos)</button>
+  <button class="tab-btn" id="btn-tab-socios" style="display:none; background:#78470d; color:#fff; border-color:#78470d;" onclick="openTab('tab-socios', this)">🔒 Painel dos Sócios & Cotador</button>
 </nav>
 
 <main class="main-container">
@@ -479,14 +518,14 @@
   <div class="architecture-banner">
     <div>
       <h3>🔗 Pipeline do Harness (Esteira de Execução e Controle da IA na Empresa)</h3>
-      <p style="font-size: 0.82rem; color: #693d0a;">Aprenda os nomes originais das ferramentas com a tradução prática entre parênteses para dominar qualquer plataforma:</p>
+      <p style="font-size: 0.81rem; color: #693d0a;">Termos técnicos reais das ferramentas com a tradução executiva entre parênteses:</p>
     </div>
     <div class="arch-flow">
-      <span class="arch-pill" id="pill1" onclick="openTab('tab-mod1', document.getElementById('btn-tab-mod1'))">1. Data Cleaning (Limpeza de Dados)</span> ➔
+      <span class="arch-pill" id="pill1" onclick="openTab('tab-mod1', document.getElementById('btn-tab-mod1'))">1. Data Cleaning (Limpeza)</span> ➔
       <span class="arch-pill" id="pill2" onclick="openTab('tab-mod1', document.getElementById('btn-tab-mod1'))">2. Knowledge Hub (Lugar Único)</span> ➔
       <span class="arch-pill" id="pill3" onclick="openTab('tab-mod2', document.getElementById('btn-tab-mod2'))">3. Master + Sub-Agents (Equipe)</span> ➔
-      <span class="arch-pill" id="pill4" onclick="openTab('tab-mod3', document.getElementById('btn-tab-mod3'))">4. Skills & Harness (Procedimento e Esteira)</span> ➔
-      <span class="arch-pill" id="pill5" onclick="openTab('tab-mod4', document.getElementById('btn-tab-mod4'))">5. Internal App (Sistema Interno)</span>
+      <span class="arch-pill" id="pill4" onclick="openTab('tab-mod3', document.getElementById('btn-tab-mod3'))">4. Skills & Harness (Esteira)</span> ➔
+      <span class="arch-pill" id="pill5" onclick="openTab('tab-mod4', document.getElementById('btn-tab-mod4'))">5. Internal App (Sistema)</span>
     </div>
   </div>
 
@@ -498,7 +537,7 @@
       <div class="card-header">
         <div>
           <div class="card-title">Etapa 1.1 — Business Diagnosis (Diagnóstico do Negócio), Bancada Dupla e Guardrails (Travas do Dono)</div>
-          <div class="card-subtitle">Defina quem é o Dono (que pensa as regras e estratégias) e quem é o Braço Direito (que vai operar o Hub e os dados com você na segunda-feira).</div>
+          <div class="card-subtitle">O Dono define a estratégia e os Guardrails (Travas de Margem/Prazo); o Champion / Operator (Braço Direito) opera os dados e sistemas no dia a dia.</div>
         </div>
         <span class="badge">Módulo 1 • Horas 1 e 2</span>
       </div>
@@ -506,7 +545,7 @@
       <div class="grid-3">
         <div>
           <label for="empNome">1. Nome da Empresa em Venda Nova</label>
-          <input type="text" id="empNome" placeholder="Ex.: Torrefação & Agroturismo Família Zandonadi" oninput="atualizarArquitetura()">
+          <input type="text" id="empNome" oninput="atualizarArquitetura()">
         </div>
         <div>
           <label for="empSetor">2. Setor / Ilha de Trabalho</label>
@@ -519,29 +558,29 @@
         </div>
         <div>
           <label for="empOperador">3. Champion / Operator (Braço Direito na Operação)</label>
-          <input type="text" id="empOperador" placeholder="Ex.: Lucas (Filho / Gerente Administrativo)" oninput="atualizarArquitetura()">
+          <input type="text" id="empOperador" oninput="atualizarArquitetura()">
         </div>
       </div>
 
       <div class="grid-2">
         <div>
-          <label for="empProblema">4. Target Bottleneck (Problema / Gargalo Nº 1 que Trouxe para Resolver)</label>
-          <textarea id="empProblema" placeholder="Ex.: Demoramos horas para calcular custos reais de produção/orçamento, perdemos o controle dos pedidos e cada funcionário executa de um jeito diferente." oninput="atualizarArquitetura()"></textarea>
+          <label for="empProblema">4. Target Bottleneck (Problema / Gargalo Nº 1 para Resolver)</label>
+          <textarea id="empProblema" oninput="atualizarArquitetura()"></textarea>
         </div>
         <div>
-          <label for="empDadosBrutos">5. Raw Data Sources (Fontes de Dados Brutos da Empresa — Mesmo Bagunçadas)</label>
-          <textarea id="empDadosBrutos" placeholder="Ex.: Planilhas de custos e vendas no Excel, romaneios/notas em PDF, mensagens de pedidos no WhatsApp e regras de negócio que estão só na cabeça do dono." oninput="atualizarArquitetura()"></textarea>
+          <label for="empDadosBrutos">5. Raw Data Sources (Fontes de Dados Brutos da Empresa)</label>
+          <textarea id="empDadosBrutos" oninput="atualizarArquitetura()"></textarea>
         </div>
       </div>
 
       <div class="grid-2">
         <div>
           <label for="empRegras">6. Guardrails (Travas de Segurança Inegociáveis do Dono: Margem, Prazo e Qualidade)</label>
-          <input type="text" id="empRegras" placeholder="Ex.: Margem líquida mínima de 28%, nunca prometer prazo inferior a 48h, desconto máximo de 5% à vista" oninput="atualizarArquitetura()">
+          <input type="text" id="empRegras" oninput="atualizarArquitetura()">
         </div>
         <div>
-          <label for="empMetaSistema">7. Target Internal System (Sistema / Plataforma Interna Alvo no Módulo 4)</label>
-          <input type="text" id="empMetaSistema" placeholder="Ex.: Sistema Calculador de Custo de Lote/Orçamento + Painel de Controle de Pedidos e Margem" oninput="atualizarArquitetura()">
+          <label for="empMetaSistema">7. Target Internal System (Sistema Interno Alvo no Módulo 4)</label>
+          <input type="text" id="empMetaSistema" oninput="atualizarArquitetura()">
         </div>
       </div>
 
@@ -554,20 +593,19 @@
       </div>
     </div>
 
-    <!-- ETAPA 1.2: DATA CLEANING & KNOWLEDGE HUB -->
     <div class="card">
       <div class="card-header">
         <div>
           <div class="card-title">Etapa 1.2 — Data Cleaning Bench (Bancada de Limpeza de Dados) & Knowledge Hub (Hub Central)</div>
-          <div class="card-subtitle">Cole uma amostra dos seus Raw Data (Dados Brutos/Sujos) para higienizar e salvar no seu Knowledge Hub (Lugar Único onde ficam todas as informações da empresa e dos agentes):</div>
+          <div class="card-subtitle">Cole uma amostra dos seus Raw Data (Dados Brutos/Sujos) para higienizar e salvar no seu Knowledge Hub (Lugar Único de Memória da Empresa):</div>
         </div>
         <span class="badge">Módulo 1 • Horas 3 e 4</span>
       </div>
 
-      <div class="grid-2" style="margin-bottom: 12px;">
+      <div class="grid-2" style="margin-bottom: 10px;">
         <div>
-          <label for="inputDadosSujos">Cole Aqui Seus Raw Data (Dados Brutos / Bagunçados para Limpar):</label>
-          <textarea id="inputDadosSujos" style="min-height: 115px;" placeholder="Ex.: Cafe torrado 250g custo 14,50 venda 28,00 / Kit Degustacao Socol + Queijo custo 42 venda 85 / Cesta Colonial Grande sem preço atualizado..." oninput="atualizarArquitetura()"></textarea>
+          <label for="inputDadosSujos">Amostra de Raw Data (Dados Brutos / Bagunçados para Limpar):</label>
+          <textarea id="inputDadosSujos" style="min-height: 105px;" oninput="atualizarArquitetura()"></textarea>
           <label for="formatoDadosLimpos">Output Schema (Formato de Saída Padronizado para o Hub):</label>
           <select id="formatoDadosLimpos" onchange="atualizarArquitetura()">
             <option value="Structured Markdown Table + CSV (Tabela Padronizada para Planilha e Agentes)">Structured Markdown Table + CSV (Tabela Padronizada para Planilha e Agentes)</option>
@@ -578,29 +616,30 @@
 
         <div class="hub-folder">
           <h4>📁 Knowledge Hub (O Lugar Único da Empresa no Google Drive)</h4>
-          <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 8px;">Estrutura de pastas pré-montada (Método Lego) para você e seu Braço Direito operarem:</p>
+          <p style="font-size: 0.79rem; color: var(--muted); margin-bottom: 6px;">Estrutura de 5 pastas (Método Lego) para o Dono e o Braço Direito operarem:</p>
           <ul>
             <li>📂 <strong>01_Diagnostico_e_Contexto/</strong> (`00_DIAGNOSTICO_E_GUARDRAILS.md`)</li>
-            <li>📂 <strong>02_Bases_de_Dados_Tratadas/</strong> (Clean Data / Tabelas limpas de Custos e Clientes)</li>
+            <li>📂 <strong>02_Bases_de_Dados_Tratadas/</strong> (Clean Data / Tabelas limpas)</li>
             <li>📂 <strong>03_Forca_de_Trabalho_Agentes/</strong> (Master Orchestrator + Sub-Agents)</li>
-            <li>📂 <strong>04_Catalogo_de_Skills_e_Harness/</strong> (Arquivos `SKILL.md` e Esteira de Controle)</li>
-            <li>📂 <strong>05_Entregas_e_Sistemas/</strong> (Outputs dos agentes e Sistema `.html` da empresa)</li>
+            <li>📂 <strong>04_Catalogo_de_Skills_e_Harness/</strong> (Arquivos `SKILL.md` e Esteira)</li>
+            <li>📂 <strong>05_Entregas_e_Sistemas/</strong> (Relatórios e Sistema `.html` da empresa)</li>
           </ul>
-          <div style="margin-top: 10px;">
-            <a class="btn btn-outline btn-sm" href="https://drive.google.com/drive/folders/18opZMgyFPeS3raCUL4AgEuI90kOMbzR9" target="_blank">📁 Abrir Pasta-Modelo do Hub Central no Drive</a>
+          <div style="margin-top: 8px;">
+            <a class="btn btn-outline btn-sm" href="https://drive.google.com/drive/folders/18opZMgyFPeS3raCUL4AgEuI90kOMbzR9" target="_blank">📁 Abrir Pasta-Modelo do Hub Central</a>
           </div>
         </div>
       </div>
 
-      <label>Data Cleaning Pipeline (Comando de Higienização e Estruturação de Dados para o Hub):</label>
+      <div class="exec-summary-box" id="resumoMod1"></div>
       <div class="spec-box" id="specMod1Dados"></div>
 
       <div class="action-bar">
-        <button class="btn btn-primary" onclick="copiarTexto('specMod1Dados')">📋 Copiar Data Cleaning Pipeline (Limpeza de Dados)</button>
-        <a class="btn btn-outline" href="https://gemini.google.com" target="_blank">✨ Executar na Ferramenta Oficial (Gemini / ChatGPT)</a>
+        <button class="btn btn-primary" onclick="copiarTexto('specMod1Dados')">📋 Copiar Comando de Limpeza de Dados</button>
+        <button class="btn btn-outline" onclick="toggleSpec('specMod1Dados', this)">👁️ Ver / Ocultar Instrução Técnica</button>
+        <a class="btn btn-outline" href="https://gemini.google.com" target="_blank">✨ Abrir Ferramenta de IA</a>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="2" onchange="salvarProgresso()">
-          2. Dados Tratados e Hub Central Criado
+          2. Dados Limpos e Hub Criado
         </label>
       </div>
     </div>
@@ -614,17 +653,18 @@
       <div class="card-header">
         <div>
           <div class="card-title">Etapa 2.1 — Master Agent / Orchestrator (Agente Mestre / Gerente Geral Digital)</div>
-          <div class="card-subtitle">O Master Orchestrator (Gerente Geral Digital) lê o Knowledge Hub (Hub Central), recebe o problema da empresa, divide o plano em etapas e delega para os Sub-Agents (Agentes Especializados).</div>
+          <div class="card-subtitle">O Master Orchestrator (Gerente Geral Digital) lê o Knowledge Hub (Hub Central), recebe o problema, divide o plano em etapas e coordena os Sub-Agents (Especialistas).</div>
         </div>
         <span class="badge">Módulo 2 • Horas 1 e 2</span>
       </div>
 
-      <label>System Prompt / Specification do Master Orchestrator (`01_MASTER_ORCHESTRATOR.md`):</label>
+      <div class="exec-summary-box" id="resumoMod2Master"></div>
       <div class="spec-box" id="specMod2Master"></div>
 
       <div class="action-bar">
-        <button class="btn btn-primary" onclick="copiarTexto('specMod2Master')">📋 Copiar Master Orchestrator (Gerente Geral)</button>
-        <button class="btn btn-outline" onclick="baixarArquivoUnico('01_MASTER_ORCHESTRATOR.md', document.getElementById('specMod2Master').textContent)">💾 Baixar 01_MASTER_ORCHESTRATOR.md</button>
+        <button class="btn btn-primary" onclick="copiarTexto('specMod2Master')">📋 Copiar Cérebro do Master Orchestrator</button>
+        <button class="btn btn-outline" onclick="toggleSpec('specMod2Master', this)">👁️ Ver / Ocultar Instrução Técnica</button>
+        <button class="btn btn-outline" onclick="baixarArquivoUnico('01_MASTER_ORCHESTRATOR.md', document.getElementById('specMod2Master').textContent)">💾 Baixar .md</button>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="3" onchange="salvarProgresso()">
           3. Master Orchestrator Configurado
@@ -635,8 +675,8 @@
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">Etapa 2.2 — Specialized Sub-Agents (Equipe de 3 Agentes Especializados por Função)</div>
-          <div class="card-subtitle">Configure os 3 Sub-Agents (Especialistas de Setor) que trabalham sob comando do Agente Mestre e consultam os dados limpos do Hub Central:</div>
+          <div class="card-title">Etapa 2.2 — Specialized Sub-Agents (Equipe de 3 Agentes Especializados por Setor)</div>
+          <div class="card-subtitle">Configure os 3 Sub-Agents (Especialistas) que trabalham sob comando do Gerente Geral Digital e consultam os dados limpos do Hub Central:</div>
         </div>
         <span class="badge">Módulo 2 • Horas 3 e 4</span>
       </div>
@@ -644,24 +684,25 @@
       <div class="grid-3">
         <div>
           <label for="subAgente1">Sub-Agent #1 (Dados, Custos & Finanças)</label>
-          <input type="text" id="subAgente1" value="Data & Finance Agent (Especialista em Dados, Custos e Margem)" oninput="atualizarArquitetura()">
+          <input type="text" id="subAgente1" oninput="atualizarArquitetura()">
         </div>
         <div>
           <label for="subAgente2">Sub-Agent #2 (Operações, Processos & Qualidade)</label>
-          <input type="text" id="subAgente2" value="Operations & QA Agent (Auditor de Processos, Fluxos e Qualidade)" oninput="atualizarArquitetura()">
+          <input type="text" id="subAgente2" oninput="atualizarArquitetura()">
         </div>
         <div>
           <label for="subAgente3">Sub-Agent #3 (Sistemas Internos & Comercial)</label>
-          <input type="text" id="subAgente3" value="Systems & Sales Builder Agent (Construtor de Sistemas e Propostas)" oninput="atualizarArquitetura()">
+          <input type="text" id="subAgente3" oninput="atualizarArquitetura()">
         </div>
       </div>
 
-      <label>Agent Workforce Specification (`02_SPECIALIST_SUB_AGENTS.md`):</label>
+      <div class="exec-summary-box" id="resumoMod2Sub"></div>
       <div class="spec-box" id="specMod2Especialistas"></div>
 
       <div class="action-bar">
-        <button class="btn btn-primary" onclick="copiarTexto('specMod2Especialistas')">📋 Copiar Sub-Agents (Equipe de Especialistas)</button>
-        <button class="btn btn-outline" onclick="baixarArquivoUnico('02_SPECIALIST_SUB_AGENTS.md', document.getElementById('specMod2Especialistas').textContent)">💾 Baixar 02_SPECIALIST_SUB_AGENTS.md</button>
+        <button class="btn btn-primary" onclick="copiarTexto('specMod2Especialistas')">📋 Copiar Equipe de Sub-Agents</button>
+        <button class="btn btn-outline" onclick="toggleSpec('specMod2Especialistas', this)">👁️ Ver / Ocultar Instrução Técnica</button>
+        <button class="btn btn-outline" onclick="baixarArquivoUnico('02_SPECIALIST_SUB_AGENTS.md', document.getElementById('specMod2Especialistas').textContent)">💾 Baixar .md</button>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="4" onchange="salvarProgresso()">
           4. Equipe de Sub-Agents Pronta
@@ -678,52 +719,52 @@
       <div class="card-header">
         <div>
           <div class="card-title">Etapa 3.1 — Agent Skills / `SKILL.md` (Manuais de Habilidades Padronizadas da Função)</div>
-          <div class="card-subtitle">Uma Skill (Habilidade Padronizada) é uma peça de Lego técnica que diz ao agente: quando agir (Trigger), quais dados exigir (Input Schema), quais travas respeitar (Guardrails) e como entregar (Output Contract).</div>
+          <div class="card-subtitle">Ative as peças do seu Kit Lego e personalize sua Skill principal com Trigger (Gatilho), Input Schema (Dados Exigidos) e Output Contract (Formato de Saída):</div>
         </div>
         <span class="badge">Módulo 3 • Horas 1 e 2</span>
       </div>
 
-      <label>Peças Prontas do Seu Kit Lego: Clique para ativar/desativar as Skills (Habilidades) da sua empresa:</label>
-      <div class="grid-4" style="margin-bottom: 16px;">
+      <div class="grid-4" style="margin-bottom: 14px;">
         <div class="skill-card active" id="skCard1" onclick="toggleSkillCard(1)">
           <strong>🧹 Skill 1: Data Cleaning (Higienização de Dados)</strong>
-          <span>Limpa planilhas, padroniza colunas, remove duplicados e valida tabelas para o Hub Central.</span>
+          <span>Padroniza colunas, limpa formatos numéricos e valida tabelas para o Hub.</span>
         </div>
         <div class="skill-card active" id="skCard2" onclick="toggleSkillCard(2)">
-          <strong>💰 Skill 2: Cost & Margin Guardrail (Auditoria de Margem)</strong>
-          <span>Calcula custo real por lote/serviço e bloqueia orçamentos abaixo da margem mínima do dono.</span>
+          <strong>💰 Skill 2: Cost & Margin Guardrail (Trava de Margem)</strong>
+          <span>Calcula custo real por lote/serviço e bloqueia vendas abaixo da margem mínima.</span>
         </div>
         <div class="skill-card active" id="skCard3" onclick="toggleSkillCard(3)">
           <strong>⚙️ Skill 3: SOP Builder (Padronização Operacional)</strong>
-          <span>Transforma gargalos em procedimentos auditáveis e checklists para o Braço Direito e equipe.</span>
+          <span>Converte gargalos em procedimentos auditáveis e checklists para o Braço Direito.</span>
         </div>
         <div class="skill-card active" id="skCard4" onclick="toggleSkillCard(4)">
-          <strong>💻 Skill 4: Artifact / App Builder (Geração de Sistemas)</strong>
-          <span>Programa calculadoras, painéis (dashboards) e mini-sistemas HTML/JS conectados ao Hub.</span>
+          <strong>💻 Skill 4: Artifact / App Builder (Criar Sistemas)</strong>
+          <span>Programa calculadoras, painéis e mini-sistemas HTML/JS conectados ao Hub.</span>
         </div>
       </div>
 
       <div class="grid-3">
         <div>
-          <label for="skillNome">Custom Skill ID (Nome da Sua Habilidade Principal)</label>
-          <input type="text" id="skillNome" value="auditoria-e-calculo-operacional" oninput="atualizarArquitetura()">
+          <label for="skillNome">Custom Skill ID (Habilidade Principal)</label>
+          <input type="text" id="skillNome" oninput="atualizarArquitetura()">
         </div>
         <div>
-          <label for="skillInput">Input Schema (Dados de Entrada Exigidos do Hub)</label>
-          <input type="text" id="skillInput" value="Tabelas de custos/insumos, histórico de pedidos e regras de margem" oninput="atualizarArquitetura()">
+          <label for="skillInput">Input Schema (Dados Exigidos do Hub)</label>
+          <input type="text" id="skillInput" oninput="atualizarArquitetura()">
         </div>
         <div>
-          <label for="skillOutput">Output Contract (Formato de Saída Salvo no Hub)</label>
-          <input type="text" id="skillOutput" value="Tabela auditada + Alerta de desvios de margem + Plano de ação" oninput="atualizarArquitetura()">
+          <label for="skillOutput">Output Contract (Entrega Salva no Hub)</label>
+          <input type="text" id="skillOutput" oninput="atualizarArquitetura()">
         </div>
       </div>
 
-      <label>Catálogo Oficial de Skills (`03_CATALOGO_SKILLS.md`):</label>
+      <div class="exec-summary-box" id="resumoMod3Skill"></div>
       <div class="spec-box" id="specMod3Skill"></div>
 
       <div class="action-bar">
-        <button class="btn btn-primary" onclick="copiarTexto('specMod3Skill')">📋 Copiar Catálogo SKILL.md (Manuais de Habilidade)</button>
-        <button class="btn btn-outline" onclick="baixarArquivoUnico('03_CATALOGO_SKILLS.md', document.getElementById('specMod3Skill').textContent)">💾 Baixar 03_CATALOGO_SKILLS.md</button>
+        <button class="btn btn-primary" onclick="copiarTexto('specMod3Skill')">📋 Copiar Catálogo SKILL.md</button>
+        <button class="btn btn-outline" onclick="toggleSpec('specMod3Skill', this)">👁️ Ver / Ocultar Instrução Técnica</button>
+        <button class="btn btn-outline" onclick="baixarArquivoUnico('03_CATALOGO_SKILLS.md', document.getElementById('specMod3Skill').textContent)">💾 Baixar .md</button>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="5" onchange="salvarProgresso()">
           5. Catálogo de Skills Configurado
@@ -735,17 +776,18 @@
       <div class="card-header">
         <div>
           <div class="card-title">Etapa 3.2 — Agent Harness (Esteira de Execução, Controle de Qualidade e Persistência)</div>
-          <div class="card-subtitle">O Harness (Esteira de Trabalho / Arreio de Controle) conecta todas as peças para que os agentes não improvisem: Dados Limpos ➔ Master Orchestrator ➔ Sub-Agent + Skill ➔ Critique (Conferência de Travas) ➔ Salvar no Hub.</div>
+          <div class="card-subtitle">O Harness (Esteira de Controle) une tudo sem improviso: Dados Limpos ➔ Master Orchestrator ➔ Sub-Agent + Skill ➔ Guardrail Critique (Auditoria de Travas) ➔ Salvar no Hub.</div>
         </div>
         <span class="badge">Módulo 3 • Clínica de Bancada</span>
       </div>
 
-      <label>Especificação Completa do Harness (`04_AGENT_HARNESS_PIPELINE.md`):</label>
+      <div class="exec-summary-box" id="resumoMod3Harness"></div>
       <div class="spec-box" id="specMod3Harness"></div>
 
       <div class="action-bar">
-        <button class="btn btn-primary" onclick="copiarTexto('specMod3Harness')">📋 Copiar Protocolo do Harness (Esteira de Controle)</button>
-        <button class="btn btn-outline" onclick="baixarArquivoUnico('04_AGENT_HARNESS_PIPELINE.md', document.getElementById('specMod3Harness').textContent)">💾 Baixar 04_AGENT_HARNESS_PIPELINE.md</button>
+        <button class="btn btn-primary" onclick="copiarTexto('specMod3Harness')">📋 Copiar Protocolo do Harness</button>
+        <button class="btn btn-outline" onclick="toggleSpec('specMod3Harness', this)">👁️ Ver / Ocultar Instrução Técnica</button>
+        <button class="btn btn-outline" onclick="baixarArquivoUnico('04_AGENT_HARNESS_PIPELINE.md', document.getElementById('specMod3Harness').textContent)">💾 Baixar .md</button>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="6" onchange="salvarProgresso()">
           6. Harness Auditado na Clínica de Mesa
@@ -755,14 +797,14 @@
   </section>
 
   <!-- ===================================================================== -->
-  <!-- MÓDULO 4: ARTIFACTS / VIBE CODING (FÁBRICA DE SISTEMAS INTERNOS)      -->
+  <!-- MÓDULO 4: ARTIFACTS / INTERNAL APP BUILDER (FÁBRICA DE SISTEMAS)      -->
   <!-- ===================================================================== -->
   <section class="tab-panel" id="tab-mod4">
     <div class="card">
       <div class="card-header">
         <div>
           <div class="card-title">Etapa 4.1 — Live Prototype (Protótipo Ao Vivo de Sistema Interno com Guardrails)</div>
-          <div class="card-subtitle">Teste abaixo um exemplo real de Internal Web System (Sistema Interno) com Margin Guardrail (Trava Automática de Margem Mínima de 28%) para você e seu Braço Direito verem o que vão gerar hoje:</div>
+          <div class="card-subtitle">Teste abaixo um exemplo real de Internal Web System (Sistema Interno) com Margin Guardrail (Trava Automática de Margem Mínima de 28%) funcionando ao vivo:</div>
         </div>
         <span class="badge">Simulador Funcional Ao Vivo</span>
       </div>
@@ -778,22 +820,22 @@
             <input type="number" id="simCusto" value="32" step="0.5" oninput="rodarSimulador()">
           </div>
           <div>
-            <label for="simQtd">Order Qty (Quantidade do Pedido)</label>
+            <label for="simQtd">Order Qty (Quantidade)</label>
             <input type="number" id="simQtd" value="25" step="1" oninput="rodarSimulador()">
           </div>
           <div>
-            <label for="simPreco">Target Price (Preço de Venda R$)</label>
+            <label for="simPreco">Target Price (Preço Venda R$)</label>
             <input type="number" id="simPreco" value="60" step="0.5" oninput="rodarSimulador()">
           </div>
         </div>
 
         <div class="grid-4" style="margin-top: 6px;">
           <div class="proto-kpi">
-            <span>Gross Revenue (Faturamento Total)</span>
+            <span>Gross Revenue (Faturamento)</span>
             <strong id="kpiFat">R$ 1.500,00</strong>
           </div>
           <div class="proto-kpi">
-            <span>Total Cost + Taxes (Custo + Impostos 8%)</span>
+            <span>Total Cost + Taxes (Custo + Imp. 8%)</span>
             <strong id="kpiCusto">R$ 920,00</strong>
           </div>
           <div class="proto-kpi">
@@ -811,15 +853,15 @@
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">Etapa 4.2 — Internal App Builder / Vibe Coding (Fábrica de Sistemas e Plataformas da Empresa)</div>
-          <div class="card-subtitle">Gere a especificação técnica abaixo para o Agente Construtor programar o seu próprio aplicativo/sistema web interno (HTML/JS) conectado às regras do seu Hub Central:</div>
+          <div class="card-title">Etapa 4.2 — Internal App Builder / Vibe Coding (Fábrica de Sistemas da Empresa)</div>
+          <div class="card-subtitle">Copie a especificação pronta abaixo para o Agente Construtor gerar o sistema web interno (HTML/JS) da sua empresa:</div>
         </div>
         <span class="badge">Módulo 4 • Construção Prática</span>
       </div>
 
       <div class="grid-2">
         <div>
-          <label for="sisTipo">1. Application Type (Qual Sistema Interno Vamos Gerar Agora?)</label>
+          <label for="sisTipo">1. Application Type (Qual Sistema Interno Vamos Gerar?)</label>
           <select id="sisTipo" onchange="atualizarArquitetura()">
             <option value="Sistema Calculador de Custos, Guardrail de Margem e Gerador de Orçamentos">Cost & Quote Calculator (Calculador de Custos, Trava de Margem e Orçamentos)</option>
             <option value="Plataforma Interna de Controle de Pedidos, Produção e Estoque">Order & Production Tracker (Plataforma de Controle de Pedidos, Produção e Estoque)</option>
@@ -833,13 +875,14 @@
         </div>
       </div>
 
-      <label>System Engineering Specification (`05_SISTEMA_SPEC.md`):</label>
+      <div class="exec-summary-box" id="resumoMod4Sis"></div>
       <div class="spec-box" id="specMod4Sistema"></div>
 
       <div class="action-bar">
-        <button class="btn btn-primary" onclick="copiarTexto('specMod4Sistema')">📋 Copiar Especificação do Sistema</button>
+        <button class="btn btn-primary" onclick="copiarTexto('specMod4Sistema')">📋 Copiar Especificação para Gerar Sistema</button>
+        <button class="btn btn-outline" onclick="toggleSpec('specMod4Sistema', this)">👁️ Ver / Ocultar Instrução Técnica</button>
         <a class="btn btn-outline" href="https://claude.ai" target="_blank">⚡ Gerar Sistema (Artifacts / Canvas)</a>
-        <button class="btn btn-accent" onclick="baixarPacoteHub()">📥 Baixar Todos os Arquivos do Meu Hub (.md)</button>
+        <button class="btn btn-accent" onclick="baixarPacoteHub()">📥 Baixar Dossiê Completo do Meu Hub (.md)</button>
         <label class="step-check">
           <input type="checkbox" class="chk-step" data-step="7" onchange="salvarProgresso()">
           7. Sistema Interno Funcionando
@@ -853,11 +896,11 @@
   </section>
 
   <!-- ===================================================================== -->
-  <!-- ABA 5: CENTRAL DOS SÓCIOS, CLÍNICA DE BANCADA E COTADOR IN-COMPANY    -->
+  <!-- ABA RESTRITA DOS SÓCIOS (DESBLOQUEADA APENAS COM PIN 2026)            -->
   <!-- ===================================================================== -->
   <section class="tab-panel" id="tab-socios">
     <div class="timer-box">
-      <h3>⏱️ Cronômetro de Sala (Pré-Onboard, Blocos Teóricos e Clínica de Bancada)</h3>
+      <h3>⏱️ Cronômetro de Sala (Pré-Onboard, Blocos Práticos e Clínica de Bancada)</h3>
       <div class="timer-display" id="timerDisplay">20:00</div>
       <div class="action-bar" style="justify-content: center;">
         <button class="btn btn-primary" onclick="setTimer(30)">30 min (Pré-Onboard Wi-Fi/Login)</button>
@@ -868,49 +911,13 @@
       </div>
     </div>
 
-    <!-- PROTOCOLO OPERACIONAL DAS 6 MUDANÇAS ESTRATÉGICAS DOS SÓCIOS -->
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">🛡️ Protocolo de Excelência em Sala (As 6 Regras de Ouro dos 3 Sócios)</div>
-          <div class="card-subtitle">Como conduzir os 20 empresários iniciantes sem travamento técnico e com máxima conversão para os projetos In-Company:</div>
-        </div>
-        <span class="badge">Alinhamento Interno dos Sócios</span>
-      </div>
-
-      <div class="grid-3">
-        <div class="hub-folder">
-          <h4>1. Pré-Onboard (-30 min) + Bancada Dupla</h4>
-          <ul>
-            <li>• Receber os alunos 30 min antes do Módulo 1 com café para conectar Wi-Fi e login sem atrasar a aula;</li>
-            <li>• Incentivar a <strong>Bancada Dupla (Dono + Braço Direito)</strong>: o dono define regras/margens e o operador alimenta o Hub.</li>
-          </ul>
-        </div>
-        <div class="hub-folder">
-          <h4>2. Ferramenta Padrão + Método Lego</h4>
-          <ul>
-            <li>• Nos Módulos 1 a 3, toda a sala segue na <strong>mesma ferramenta padrão no telão</strong> para ninguém se perder nos botões;</li>
-            <li>• Usar os 4 botões de <strong>Kit Lego Setorial</strong> no topo desta plataforma para ninguém começar de uma folha em branco.</li>
-          </ul>
-        </div>
-        <div class="hub-folder">
-          <h4>3. Clínica de Bancada (Módulos 3 e 4)</h4>
-          <ul>
-            <li>• 40 min de demonstração no telão + <strong>2h de Clínica de Mesa</strong> onde cada um dos 3 sócios assume a mentoria direta de 1 a 2 ilhas setoriais;</li>
-            <li>• Na mesa, cada sócio já mapeia a complexidade da empresa e agenda a <strong>Análise Diagnóstica Gratuita de 1h</strong>.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- CALCULADORA DE COTAÇÃO IN-COMPANY -->
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <div class="card-title">💼 Calculadora de Cotação In-Company (Pós-Análise Diagnóstica Gratuita de 1h)</div>
+          <div class="card-title">💼 Calculadora de Cotação In-Company (Exclusiva dos Sócios — Pós-Diagnóstico de 1h)</div>
           <div class="card-subtitle">Use durante a visita diagnóstica na empresa do aluno para cotar projetos de Incubação de IA, Treinamento de Equipes/TI e Construção de Harness/Sistemas:</div>
         </div>
-        <span class="badge">Tabela Executiva Dobrada</span>
+        <span class="badge">Acesso Restrito Sócios</span>
       </div>
 
       <div class="grid-4">
@@ -969,8 +976,7 @@
         </div>
       </div>
 
-      <label>Proposta Comercial Gerada Automaticamente (Pronta para Enviar após a Análise Gratuita):</label>
-      <div class="spec-box" id="boxPropostaInCompany"></div>
+      <div class="spec-box open" id="boxPropostaInCompany"></div>
 
       <div class="action-bar">
         <button class="btn btn-primary" onclick="copiarTexto('boxPropostaInCompany')">📋 Copiar Proposta Comercial In-Company</button>
@@ -981,7 +987,7 @@
       <div class="card-header">
         <div>
           <div class="card-title">📂 Diretório Oficial dos Sócios no Google Drive</div>
-          <div class="card-subtitle">Todos os documentos de planejamento, inscrições, planilha financeira, slides e pasta-modelo do Hub Central reunidos:</div>
+          <div class="card-subtitle">Documentos estratégicos, planilha financeira/DRE e pastas oficiais da turma:</div>
         </div>
         <a class="btn btn-primary" href="https://drive.google.com/drive/folders/1i1dsn8D0IiyAjG-C9JD12TX4WS3nTaEd" target="_blank">📁 Abrir Pasta Completa no Drive</a>
       </div>
@@ -993,23 +999,23 @@
         </a>
         <a class="link-card" href="https://docs.google.com/forms/d/1LT5-DknGec3D4y5-F1nm-XfTK3U9P6yz59-9Ld4XL78/viewform" target="_blank">
           <strong>📝 2. Google Forms de Inscrição (Público)</strong>
-          <span>Link de matrícula com validação do nome do indicador (5% de desconto por indicado, teto de 10%).</span>
+          <span>Link de matrícula com validação do nome do indicador (5% OFF por indicado, teto de 10%).</span>
         </a>
         <a class="link-card" href="https://docs.google.com/spreadsheets/d/1sfELV9beqFOv8FttzIjeOD8QkmY9fPLQrfVU26zDwa0/edit" target="_blank">
           <strong>📊 3. Planilha de Inscrições e DRE Financeiro</strong>
           <span>Controle das 20 vagas, descontos de indicação, custos e lucro da turma.</span>
         </a>
-        <a class="link-card" href="https://drive.google.com/drive/folders/18opZMgyFPeS3raCUL4AgEuI90kOMbzR9" target="_blank">
-          <strong>🧱 4. Pasta-Modelo do Hub Central & Kits Lego</strong>
-          <span>Estrutura de 5 pastas + Kits Setoriais Pré-Montados para duplicar para cada aluno.</span>
+        <a class="link-card" href="https://docs.google.com/document/d/14KVDufsslN1fRbUlcFJDtXAPuZ5GbxPO4ER1CHw3cFM/edit" target="_blank">
+          <strong>🧱 4. Kits Setoriais Pré-Montados (Método Lego)</strong>
+          <span>Glossário bilíngue + 4 Kits Setoriais prontos dentro da Pasta-Modelo do Hub Central.</span>
         </a>
         <a class="link-card" href="https://docs.google.com/document/d/1yyl0SqFU_DVM7rAOXqtXKpPVd_wsCKPy0sGcBEIbzB4/edit" target="_blank">
           <strong>📇 5. Guia de Bancada — Módulo 1 (Google Docs)</strong>
           <span>Diagnóstico, Data Cleaning (Limpeza de Dados) e Knowledge Hub (Hub Central).</span>
         </a>
-        <a class="link-card" href="https://docs.google.com/document/d/1x5JDpV-bQKewZ00si7v-1q3crg6xzfaJicbgL9szfGQ/edit" target="_blank">
-          <strong>📒 6. Guia de Bancada — Módulos 2, 3 e 4</strong>
-          <span>Master Orchestrator, Sub-Agents, Catálogo de Skills, Harness e Fábrica de Sistemas.</span>
+        <a class="link-card" href="https://docs.google.com/document/d/1_0Lpx-AuM2d580Y_tyP0HR1pb6KoNEMhX0bfsmd6Epg/edit" target="_blank">
+          <strong>🤝 6. Parcerias (ACISV/CDL) & Proposta In-Company</strong>
+          <span>Ofício institucional e proposta comercial atualizada (R$ 3.700 a R$ 30.000+).</span>
         </a>
       </div>
     </div>
@@ -1017,10 +1023,33 @@
 
 </main>
 
+<footer>
+  <span>Curso Presencial de Arquitetura de IA, Agentes, Skills & Sistemas — Venda Nova do Imigrante (ES)</span>
+  <button class="lock-btn" onclick="desbloquearAreaSocios()">🔒 Área do Instrutor / Sócios</button>
+</footer>
+
 <div id="toast">✅ Ação concluída com sucesso!</div>
 
 <script>
   let skillsAtivas = { 1: true, 2: true, 3: true, 4: true };
+
+  // Desbloqueio por PIN da Área dos Sócios (PIN padrão: 2026)
+  function desbloquearAreaSocios() {
+    const pin = prompt('Digite o PIN dos Sócios / Instrutor (Padrão: 2026):');
+    if (pin === '2026') {
+      const btnSocios = document.getElementById('btn-tab-socios');
+      btnSocios.style.display = 'inline-block';
+      openTab('tab-socios', btnSocios);
+      mostrarToast('🔓 Painel dos Sócios e Cotador In-Company desbloqueados!');
+    } else if (pin !== null) {
+      alert('PIN incorreto.');
+    }
+  }
+
+  function toggleSpec(id, btn) {
+    const box = document.getElementById(id);
+    box.classList.toggle('open');
+  }
 
   const PRESETS = {
     cafe: {
@@ -1107,7 +1136,7 @@
     document.getElementById('skillInput').value = p.skillInput;
     document.getElementById('skillOutput').value = p.skillOutput;
     atualizarArquitetura();
-    mostrarToast('⚡ Kit Lego Setorial carregado em todos os módulos!');
+    mostrarToast('🧱 Kit Lego Setorial carregado!');
   }
 
   function toggleSkillCard(num) {
@@ -1171,8 +1200,8 @@ Resolver de forma definitiva o gargalo: "${problema}", capacitando a operação 
     const nome = document.getElementById('empNome').value.trim() || '[Nome da Empresa]';
     const setor = document.getElementById('empSetor').value;
     const operador = document.getElementById('empOperador').value.trim() || '[Braço Direito / Operador Interno]';
-    const problema = document.getElementById('empProblema').value.trim() || '[Problema central de gestão/operação/vendas apresentado pelo empresário]';
-    const dados = document.getElementById('empDadosBrutos').value.trim() || '[Planilhas, relatórios em PDF, notas e regras operacionais da empresa]';
+    const problema = document.getElementById('empProblema').value.trim() || '[Problema central apresentado pelo empresário]';
+    const dados = document.getElementById('empDadosBrutos').value.trim() || '[Planilhas, PDFs, notas e regras operacionais]';
     const regras = document.getElementById('empRegras').value.trim() || '[Regras de margem, qualidade e prazos inegociáveis]';
     const metaSistema = document.getElementById('empMetaSistema').value.trim() || '[Sistema de gestão, cálculo e acompanhamento operacional]';
     const dadosSujos = document.getElementById('inputDadosSujos').value.trim() || '[Cole seus dados brutos no campo acima]';
@@ -1189,10 +1218,30 @@ Resolver de forma definitiva o gargalo: "${problema}", capacitando a operação 
     const sisTipo = document.getElementById('sisTipo').value;
     const sisCampos = document.getElementById('sisCampos').value.trim();
 
-    localStorage.setItem('cursoIA_arch_v3', JSON.stringify({
+    localStorage.setItem('cursoIA_arch_v4', JSON.stringify({
       nome, setor, operador, problema, dados, regras, metaSistema, dadosSujos, formatoLimpo, sub1, sub2, sub3, skillNome, skillInput, skillOutput, sisTipo, sisCampos, skillsAtivas
     }));
 
+    // Resumos Executivos Amigáveis (Visíveis por padrão)
+    document.getElementById('resumoMod1').innerHTML =
+      `<strong>✅ O que este comando faz para a ${nome}:</strong> Pega sua amostra de dados brutos, corrige erros de formatação, aplica suas travas (${regras}) e devolve em formato <strong>${formatoLimpo}</strong> pronto para salvar no seu Hub Central.`;
+
+    document.getElementById('resumoMod2Master').innerHTML =
+      `<strong>🧠 Papel do seu Master Orchestrator (Gerente Geral Digital):</strong> Recebe o problema <em>"${problema}"</em>, consulta os dados limpos do Hub e coordena automaticamente seus 3 Especialistas garantindo que nenhuma regra do dono seja violada.`;
+
+    document.getElementById('resumoMod2Sub').innerHTML =
+      `<strong>👥 Sua Equipe de Sub-Agents (Especialistas):</strong><br>1) <strong>${sub1}</strong>;<br>2) <strong>${sub2}</strong>;<br>3) <strong>${sub3}</strong>.`;
+
+    document.getElementById('resumoMod3Skill').innerHTML =
+      `<strong>🛠️ Sua Custom Skill Principal (<code>${skillNome}</code>):</strong> Exige como entrada <em>"${skillInput}"</em> e entrega no Hub <em>"${skillOutput}"</em> (junto com as Skills do Kit Lego marcadas acima).`;
+
+    document.getElementById('resumoMod3Harness').innerHTML =
+      `<strong>🔗 Sua Esteira (Harness) Completa:</strong> Dados Limpos ➔ Master Orchestrator ➔ Especialistas executam a Skill <code>${skillNome}</code> ➔ Auditoria de Travas (${regras}) ➔ Entrega salva no Hub para <strong>${operador}</strong> operar.`;
+
+    document.getElementById('resumoMod4Sis').innerHTML =
+      `<strong>💻 Seu Sistema Interno Alvo:</strong> Programação completa de um <strong>${sisTipo}</strong> com travas automáticas de margem e exportação para o Hub Central da <strong>${nome}</strong>.`;
+
+    // Especificações Técnicas Completas (Recolhidas até clicar em Ver/Copiar)
     document.getElementById('specMod1Dados').textContent =
 `# DATA CLEANING PIPELINE (PIPELINE DE LIMPEZA DE DADOS) & KNOWLEDGE HUB (HUB CENTRAL)
 EMPRESA: ${nome} (Venda Nova do Imigrante - ES | Setor: ${setor})
@@ -1362,14 +1411,14 @@ O sistema deve validar e aplicar automaticamente em todas as fórmulas as seguin
   }
 
   function exportarProjetoJSON() {
-    const dados = localStorage.getItem('cursoIA_arch_v3') || '{}';
+    const dados = localStorage.getItem('cursoIA_arch_v4') || '{}';
     const nomeEmp = (document.getElementById('empNome').value.trim() || 'Empresa').replace(/\s+/g, '_');
     const blob = new Blob([dados], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = `Projeto_IA_${nomeEmp}.json`;
     a.click();
-    mostrarToast('📤 Arquivo de projeto (.json) salvo para enviar ou abrir em outro computador!');
+    mostrarToast('💾 Backup do projeto (.json) salvo!');
   }
 
   function importarProjetoJSON(event) {
@@ -1381,7 +1430,7 @@ O sistema deve validar e aplicar automaticamente em todas as fórmulas as seguin
         const d = JSON.parse(e.target.result);
         aplicarDadosNoFormulario(d);
         atualizarArquitetura();
-        mostrarToast('📂 Projeto carregado com sucesso na plataforma!');
+        mostrarToast('📂 Projeto carregado com sucesso!');
       } catch (err) {
         alert('Arquivo de projeto inválido.');
       }
@@ -1429,7 +1478,7 @@ O sistema deve validar e aplicar automaticamente em todas as fórmulas as seguin
 
   function copiarTexto(id) {
     navigator.clipboard.writeText(document.getElementById(id).textContent);
-    mostrarToast('✅ Copiado para a área de transferência!');
+    mostrarToast('✅ Instrução técnica copiada para a área de transferência!');
   }
 
   function mostrarToast(msg) {
@@ -1453,10 +1502,10 @@ O sistema deve validar e aplicar automaticamente em todas as fórmulas as seguin
         c.parentElement.classList.remove('done');
       }
     });
-    localStorage.setItem('cursoIA_arch_prog_v3', JSON.stringify(st));
+    localStorage.setItem('cursoIA_arch_prog_v4', JSON.stringify(st));
     const pct = Math.round((done / checks.length) * 100);
     document.getElementById('progressBar').style.width = pct + '%';
-    document.getElementById('progressText').textContent = `${pct}% (${done}/${checks.length} marcos)`;
+    document.getElementById('progressText').textContent = `${pct}% (${done}/${checks.length} etapas)`;
 
     document.getElementById('pill1').classList.toggle('ok', !!(st['1'] && st['2']));
     document.getElementById('pill2').classList.toggle('ok', !!st['2']);
@@ -1491,13 +1540,13 @@ O sistema deve validar e aplicar automaticamente em todas as fórmulas as seguin
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('cursoIA_arch_v3');
+    const saved = localStorage.getItem('cursoIA_arch_v4') || localStorage.getItem('cursoIA_arch_v3');
     if (saved) {
       try { aplicarDadosNoFormulario(JSON.parse(saved)); } catch (e) {}
     } else {
       carregarPreset('cafe');
     }
-    const savedProg = localStorage.getItem('cursoIA_arch_prog_v3');
+    const savedProg = localStorage.getItem('cursoIA_arch_prog_v4') || localStorage.getItem('cursoIA_arch_prog_v3');
     if (savedProg) {
       try {
         const p = JSON.parse(savedProg);
